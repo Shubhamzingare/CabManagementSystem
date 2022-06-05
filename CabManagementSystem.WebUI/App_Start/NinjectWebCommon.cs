@@ -5,7 +5,8 @@ namespace CabManagementSystem.WebUI.App_Start
 {
     using System;
     using System.Web;
-
+    using System.Web.Mvc;
+    using CabManagementSystem.WebUI.Infrastructure;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
@@ -61,6 +62,7 @@ namespace CabManagementSystem.WebUI.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
         }
     }
 }
