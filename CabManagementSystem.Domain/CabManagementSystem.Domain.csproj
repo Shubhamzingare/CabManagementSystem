@@ -78,7 +78,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
     <Compile Include="Abstract\ITripRepository.cs" />
     <Compile Include="Concrete\CabDbContext.cs" />
     <Compile Include="Concrete\EFTripRepository.cs" />
@@ -86,7 +85,7 @@
     <Compile Include="Abstract\IEmployeeRepository.cs" />
     <Compile Include="Concrete\EFEmployeeRepository.cs" />
     <Compile Include="Entities\Employee.cs" />
-
+    <Compile Include="Entities\VehicleAllocation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
