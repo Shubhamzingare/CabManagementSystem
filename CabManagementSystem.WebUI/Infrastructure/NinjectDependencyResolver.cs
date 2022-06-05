@@ -20,14 +20,11 @@ namespace CabManagementSystem.WebUI.Infrastructure
 
         private void AddBindings()
         {
-
-            kernel.Bind<ITripRepository>().To<EFTripRepository>();
-            //kernel.Bind<IEmployeeRepository>().To<EFEmployeeRepository>();
-
-            //kernel.Bind<IShiftTimingsRepository>().To<EFShiftTimingRepository>();
-            //kernel.Bind<IRouteDetailRepository>().To<EFRouteDetailRepository>();
-            //kernel.Bind<IBatchDetailRepository>().To<EFBatchDetailRepository>();
-            //kernel.Bind<IVehicleDetailRepository>().To<EFVehicleDetailRepository>();
+            kernel.Bind<IEmployeeRepository>().To<EFEmployeeRepository>();
+            kernel.Bind<IShiftTimingsRepository>().To<EFShiftTimingRepository>();
+            kernel.Bind<IRouteDetailRepository>().To<EFRouteDetailRepository>();
+            kernel.Bind<IBatchDetailRepository>().To<EFBatchDetailRepository>();
+            kernel.Bind<IVehicleDetailRepository>().To<EFVehicleDetailRepository>();
 
 
         }

@@ -1,0 +1,47 @@
+﻿@model CabManagementSystem.Domain.Entities.BatchDetail
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Edit @Model.batchId Batch</h3>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-horizontal " style="width: 800px; margin:50px; align-content:center">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.batchId)
+
+            <div class="form-group">
+                <label for="batchId"><b>Batch ID</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.batchId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.batchId, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+            <div class="form-group">
+
+                <label for="totalEmp"><b>Total Employees In Batch</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.totalEmp, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.totalEmp, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="shiftId"><b>Shif ID</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.shiftId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.shiftId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="panel-footer">
+                <input type="submit" value="Save" class="btn btn-success" />
+                @Html.ActionLink("Cancle And Return to List", "BatchDetailList", null, new { @class = "btn btn-default" })
+            </div>
+
+        </div>
+    }
+</div>
+
+

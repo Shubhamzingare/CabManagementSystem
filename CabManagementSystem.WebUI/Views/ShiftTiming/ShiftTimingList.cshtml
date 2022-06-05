@@ -1,0 +1,35 @@
+﻿@model CabManagementSystem.WebUI.Models.ShiftTimingListViewModel
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search Shift Details By Shift ID</title>
+</head>
+<body>
+    <button class="fa-solid fa-plus" align="center">@Html.ActionLink("Create New", "Create", "ShiftTiming", new { @class = "fa-solid fa-plus" })</button>
+    <table class="table table-bordered table-striped m-auto">
+        <thead>
+            <tr class="table-dark text-center">
+                <th>Shift ID</th>
+                <th>Shift Name</th>
+                <th>Shift Start Time</th>
+                <th>Shift End Time</th>
+                <th>Total Batches</th>
+                <th style="width: 25%">Actions</th>
+            </tr>
+        </thead>
+        <thead>
+            @foreach (var p in Model.ShiftTimings)
+            {
+                <tr>
+                    @Html.Partial("ShiftTimingSummery", p)
+                </tr>
+            }
+        </thead>
+    </table>
+    <div class="pagination justify-content-center">
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("ShiftTimingList", new { page = x }))
+
+    </div>
+</body>
+</html>
