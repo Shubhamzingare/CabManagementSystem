@@ -5,6 +5,7 @@ using System.Web;
 
 namespace CabManagementSystem.WebUI.Models
 {
+
     public class PagingInfo
     {
         public int TotalItems { get; set; }
@@ -12,4 +13,5 @@ namespace CabManagementSystem.WebUI.Models
         public int CurrentPage { get; set; }
         public int TotalPages { get { return (int)Math.Ceiling((decimal)TotalItems / ItemsPerPage); } }
     }
+
 }
