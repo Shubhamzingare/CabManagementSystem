@@ -1,0 +1,20 @@
+﻿@model CabManagementSystem.Domain.Entities.VehicleDetail
+
+<tr>
+    <td>@Model.vehicleId</ td >
+    <td>@Model.vehicleName</td>
+    <td>@Model.venderId</td>
+    <td>@Model.driverId</td>
+    <td>@Model.vehicleType</td>
+    <td>@Model.vehicleNum</td>
+    <td>@Model.ratePerKM</td>
+    <td>@Model.capacity</td>
+    <td>@Model.routeId</td>
+    <td style="width:40px">
+        @Html.ActionLink("Edit", "Edit", new { id = @Model.vehicleId }) |
+        @Html.ActionLink("Delete", "Delete",
+    new { id = @Model.vehicleId },
+    new { onclick = "return confirm('Are you sure you wish to delete this Vehicle?');" });
+    </td>
+
+</tr>
