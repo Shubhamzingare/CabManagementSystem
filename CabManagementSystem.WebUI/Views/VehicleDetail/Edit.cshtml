@@ -1,0 +1,90 @@
+﻿@model CabManagementSystem.Domain.Entities.VehicleDetail
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Edit @Model.vehicleName</h3>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-horizontal " style="width: 800px; margin:50px; align-content:center">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.vehicleId)
+
+            <div class="form-group">
+                <label for="vehicleName"><b>Vehicle Name</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.vehicleName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.vehicleName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <label for="venderId"><b>Vender ID</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.venderId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.venderId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="driverId"><b>Driver ID</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.driverId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.driverId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="vehicleType"><b>Vehicle Type</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.vehicleType, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.vehicleType, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="vehicleNum"><b>Vehicle Number</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.vehicleNum, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.vehicleNum, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="ratePerKM"><b>Rate Per KM</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ratePerKM, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ratePerKM, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="capacity"><b>Capacity</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.capacity, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.capacity, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="routeId"><b>Route ID</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.routeId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.routeId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="panel-footer">
+                <input type="submit" value="Save" class="btn btn-success" />
+                @Html.ActionLink("Cancle And Return to List", "VehicleDetailList", null, new { @class = "btn btn-default" })
+            </div>
+
+        </div>
+    }
+</div>
+
+
+
+
