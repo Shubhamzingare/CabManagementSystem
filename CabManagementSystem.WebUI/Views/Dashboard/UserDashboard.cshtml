@@ -1,0 +1,63 @@
+﻿@model CabManagementSystem.WebUI.Models.UserDbModel.User
+
+@{
+    ViewBag.Title = "UserDashboard";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .btn-circle.btn-xl {
+            width: 100px;
+            height: 100px;
+            padding: 13px 18px;
+            border-radius: 60px;
+            font-size: 15px;
+            text-align: center;
+        }
+    </style>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Welcome @Session["UserName"]!</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-log-in"></span>
+                        @Html.ActionLink("Logout", "Logout", "Dashboard")
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</head>
+<body>
+    <div class="container">
+
+        <div class="container"></div>
+
+        <button type="button" class="btn btn-secondary btn-circle btn-xl">
+            @Html.ActionLink("Trips", "TripList", "Trip")
+        </button>
+
+    </div>
+    </div>
+</body>
+</html>
