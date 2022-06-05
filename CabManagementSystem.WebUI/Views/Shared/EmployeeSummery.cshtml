@@ -1,0 +1,22 @@
+﻿@model CabManagementSystem.Domain.Entities.Employee
+
+<tr class="text-center">
+    <td>@Model.empId</td>
+    <td>@Model.empName</td>
+    <td>@Model.perAddress</td>
+    <td>@Model.comAddress</td>
+    <td>@Model.qualification</td>
+    <td>@Model.DOB</td>
+    <td>@Model.vehrequired</td>
+    <td>@Model.gender</td>
+    <td>@Model.phoneNo</td>
+    <td>@Model.designation</td>
+    <td>@Model.department</td>
+    <td>@Model.DOJ</td>
+    <td style="width:40px">
+        @Html.ActionLink("Edit", "Edit", new { id = @Model.empId }) |
+        @Html.ActionLink("Delete", "Delete",
+    new { id = @Model.empId },
+    new { onclick = "return confirm('Are you sure you wish to delete this Employee?');" });
+    </td>
+</tr>
