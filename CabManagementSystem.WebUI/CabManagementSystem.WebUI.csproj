@@ -190,6 +190,7 @@
     <Compile Include="Models\RouteDetailListViewModel.cs" />
     <Compile Include="Models\ShiftDetailViewModel.cs" />
     <Compile Include="Models\ShiftTimingListViewModel.cs" />
+    <Compile Include="Models\TripListViewModel.cs" />
     <Compile Include="Models\UserDbModel\User.cs">
       <DependentUpon>UserModel.tt</DependentUpon>
     </Compile>
