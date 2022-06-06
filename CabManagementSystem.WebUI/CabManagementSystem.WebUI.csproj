@@ -255,6 +255,8 @@
     <Content Include="Views\Shared\VehicleDetailSummery.cshtml" />
     <Content Include="Views\VehicleDetail\VehicleDetailList.cshtml" />
     <Content Include="Views\VehicleDetail\Create.cshtml" />
+    <Content Include="Views\Trip\List.cshtml" />
+    <Content Include="Views\Shared\TripListSummary.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
