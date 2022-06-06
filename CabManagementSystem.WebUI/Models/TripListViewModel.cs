@@ -10,5 +10,6 @@ namespace CabManagementSystem.WebUI.Models
     {
         public IEnumerable<Trip> TripSheet { get; set; }
         public PagingInfo PagingInfo { get; set; }
+        //
     }
 }

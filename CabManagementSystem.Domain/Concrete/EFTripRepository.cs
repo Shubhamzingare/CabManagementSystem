@@ -13,6 +13,6 @@ namespace CabManagementSystem.Domain.Concrete
         private CabDbContext context = new CabDbContext();
 
         public IEnumerable<Trip> TripSheet => context.TripSheet;
-
+        //
     }
 }

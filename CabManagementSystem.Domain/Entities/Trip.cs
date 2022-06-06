@@ -20,5 +20,7 @@ namespace CabManagementSystem.Domain.Entities
         public decimal distanceTravelled { get; set; }
 
         public string Remark { get; set; }
+
+        //
     }
 }
