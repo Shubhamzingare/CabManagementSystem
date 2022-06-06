@@ -1,4 +1,5 @@
-﻿using CabManagementSystem.WebUI.Models.UserDbModel;
+﻿using CabManagementSystem.Domain.Concrete;
+using CabManagementSystem.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace CabManagementSystem.WebUI.Controllers
 {
     public class UserController : Controller
     {
-        CabManagementSystemEntities db = new CabManagementSystemEntities();
+        CabDbContext context = new CabDbContext();
         //GET : login 
         public ActionResult Index()
         {
@@ -19,7 +20,7 @@ namespace CabManagementSystem.WebUI.Controllers
         [HttpPost]
         public ActionResult Index(User user)
         {
-            var userData = db.Users.Where(model => model.UserType == user.UserType &&
+            var userData = context.Users.Where(model => model.UserType == user.UserType &&
                                         model.UserName == user.UserName &&
                                         model.Password == user.Password).FirstOrDefault();
             if (userData != null)
@@ -46,8 +47,8 @@ namespace CabManagementSystem.WebUI.Controllers
         {
             if (ModelState.IsValid == true)
             {
-                db.Users.Add(user);
-                int a = db.SaveChanges();
+                context.Users.Add(user);
+                int a = context.SaveChanges();
                 if (a > 0)
                 {
                     ViewBag.InsertMessage = "<script>alert('Registered Successfully')</script>";

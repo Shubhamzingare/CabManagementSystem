@@ -10,6 +10,7 @@ namespace CabManagementSystem.Domain.Entities
     public class Trip
     {
         [Key]
+        public int id { get; set; }
         public string tripSheetId { get; set; }
 
         public string vehicleAlloId { get; set; }
