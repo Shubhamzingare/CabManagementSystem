@@ -15,7 +15,6 @@ namespace CabManagementSystem.WebUI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            Database.SetInitializer<CabDbContext>(new DropCreateDatabaseIfModelChanges<CabDbContext>());
         }
     }
 }

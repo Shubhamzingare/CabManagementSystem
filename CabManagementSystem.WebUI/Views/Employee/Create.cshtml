@@ -11,7 +11,14 @@
         <div class="form-horizontal " style="width: 800px; margin:50px; align-content:center">
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-           
+
+            <div class="form-group">
+                <label for="empId"><b>Employee ID</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.empId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.empId, "", new { @class = "text-danger" })
+                </div>
+            </div>
             <div class="form-group">
                 <label for="empName"><b>Employee Name</b></label>
                 <div class="col-md-10">

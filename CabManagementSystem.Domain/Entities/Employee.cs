@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-//using CabManagementSystem.Domain.CustomValidations;
+using CabManagementSystem.Domain.CustomValidations;
 
 namespace CabManagementSystem.Domain.Entities
 {
@@ -28,7 +28,7 @@ namespace CabManagementSystem.Domain.Entities
 
         [Required(ErrorMessage = "Please enter Date of Birth")]
         [DataType(DataType.Date)]
-        //[EmployeeDOBValidation]
+        [EmployeeDOBValidation (ErrorMessage =("Date of birth must be at least 18 years from current date"))]
         public DateTime DOB { get; set; }
 
         public string vehrequired { get; set; }
@@ -49,7 +49,7 @@ namespace CabManagementSystem.Domain.Entities
 
         [Required(ErrorMessage = "Please enter Date of Joining")]
 
-        //[EmployeeDOJValidation]
+        [EmployeeDOJValidation]
         [DataType(DataType.Date)]
         public DateTime DOJ { get; set; }
 
