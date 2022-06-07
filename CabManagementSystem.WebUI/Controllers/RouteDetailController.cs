@@ -64,6 +64,11 @@ namespace CabManagementSystem.WebUI.Controllers
                 return View(routeDetail);
             }
         }
+        public ViewResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
         public ActionResult Create(RouteDetail routeDetail)
         {
             if (ModelState.IsValid)

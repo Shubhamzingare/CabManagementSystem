@@ -59,6 +59,11 @@ namespace CabManagementSystem.WebUI.Controllers
                 return View(employee);
             }
         }
+        public ViewResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
         public ActionResult Create(Employee employee)
         {
             if (ModelState.IsValid)
