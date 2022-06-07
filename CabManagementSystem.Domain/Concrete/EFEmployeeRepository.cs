@@ -10,7 +10,7 @@ namespace CabManagementSystem.Domain.Concrete
 {
     public class EFEmployeeRepository : IEmployeeRepository
     {
-        private CabDbContext context = new CabDbContext();
+         CabDbContext context = new CabDbContext();
 
         public IEnumerable<Employee> Employees => context.Employees;
 

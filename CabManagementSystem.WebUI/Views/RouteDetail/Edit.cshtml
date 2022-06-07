@@ -1,0 +1,76 @@
+﻿@model CabManagementSystem.Domain.Entities.RouteDetail
+@using CabManagementSystem.Domain.Entities
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Edit @Model.routeId Route</h3>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-horizontal " style="width: 800px; margin:50px; align-content:center">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.routeId)
+
+
+            <div class="form-group">
+                <label for="routeId"><b>Route ID</b></label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.routeId, new { htmlAttributes = new { @class = "form-control ", @disabled = "disabled" } })
+                    @Html.ValidationMessageFor(model => model.routeId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="empId"><b>Employee ID</b></label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.empId, new { htmlAttributes = new { @class = "form-control ", @disabled = "disabled" } })
+                    @Html.ValidationMessageFor(model => model.empId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="empName"><b>Employee Name</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.empName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.empName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="sourceLOC"><b>Source Location</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.sourceLOC, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.sourceLOC, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="destLOC"><b>Destination Location</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.destLOC, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.destLOC, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="destLOC"><b>Batch ID</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.batchId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.batchId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="panel-footer">
+                <input type="submit" value="Save" class="btn btn-success" />
+                @Html.ActionLink("Cancle And Return to List", "RouteDetailsById", null, new { @class = "btn btn-default" })
+            </div>
+
+        </div>
+    }
+</div>
+
+
+
+
