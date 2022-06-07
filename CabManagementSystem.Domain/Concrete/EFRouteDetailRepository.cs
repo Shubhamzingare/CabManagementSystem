@@ -14,5 +14,27 @@ namespace CabManagementSystem.Domain.Concrete
 
         public IEnumerable<RouteDetail> RouteDetails => context.RouteDetails;
 
+        public void SaveRoute(RouteDetail routeDetail)
+        {
+            if (routeDetail.routeId == 0)
+            {
+                context.RouteDetails.Add(routeDetail);
+            }
+            else
+            {
+                RouteDetail dbEntry = context.RouteDetails.Find(routeDetail.routeId);
+                if (dbEntry != null)
+                {
+                    dbEntry.routeId = routeDetail.routeId;
+                    dbEntry.empId = routeDetail.empId;
+                    dbEntry.empName = routeDetail.empName;
+                    dbEntry.sourceLOC = routeDetail.sourceLOC;
+                    dbEntry.destLOC = routeDetail.destLOC;
+                    dbEntry.batchId = routeDetail.batchId;
+                }
+            }
+            context.SaveChanges();
+        }
+
     }
 }

@@ -9,5 +9,7 @@ namespace CabManagementSystem.Domain.Abstract
     public interface IRouteDetailRepository
     {
         IEnumerable<RouteDetail> RouteDetails { get; }
+
+        void SaveRoute(RouteDetail routeDetail);
     }
 }

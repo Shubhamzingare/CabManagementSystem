@@ -13,6 +13,6 @@ namespace CabManagementSystem.Domain.Abstract
 
         void SaveShift(ShiftTiming shiftTiming);
 
-        ShiftTiming DeleteShift(int id);
+     
     }
 }
