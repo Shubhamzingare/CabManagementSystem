@@ -222,10 +222,10 @@
     <Content Include="Views\VehicleDetail\Create.cshtml" />
     <Content Include="Views\Trip\List.cshtml" />
     <Content Include="Views\Shared\TripListSummary.cshtml" />
-    <Content Include="Views\ShiftDetail\ShiftDetailsByID.cshtml" />
     <Content Include="Views\RouteDetail\RouteDetailsById.cshtml" />
     <Content Include="Views\RouteDetail\Edit.cshtml" />
     <Content Include="Views\RouteDetail\Create.cshtml" />
+    <Content Include="Views\ShiftDetail\ShiftDetailsByID.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -62,6 +62,7 @@ namespace CabManagementSystem.WebUI.Controllers
                 return View(shiftTiming);
             }
         }
+        [HttpGet]
         public ViewResult Create()
         {
             return View();

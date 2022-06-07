@@ -64,6 +64,7 @@ namespace CabManagementSystem.WebUI.Controllers
                 return View(routeDetail);
             }
         }
+        [HttpGet]
         public ViewResult Create()
         {
             return View();
