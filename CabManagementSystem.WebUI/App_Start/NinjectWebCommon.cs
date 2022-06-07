@@ -11,9 +11,6 @@ namespace CabManagementSystem.WebUI.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using Ninject.Web.Common.WebHost;
-    using System.Web.Mvc;
-    using CabManagementSystem.WebUI.Infrastructure;
-   
     public static class NinjectWebCommon 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();

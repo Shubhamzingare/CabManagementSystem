@@ -254,6 +254,12 @@
     <Content Include="Views\Shared\VehicleDetailSummery.cshtml" />
     <Content Include="Views\VehicleDetail\VehicleDetailList.cshtml" />
     <Content Include="Views\VehicleDetail\Create.cshtml" />
+    <Content Include="Views\Trip\List.cshtml" />
+    <Content Include="Views\Shared\TripListSummary.cshtml" />
+    <Content Include="Views\ShiftDetail\ShiftDetailsByID.cshtml" />
+    <Content Include="Views\RouteDetail\RouteDetailsById.cshtml" />
+    <Content Include="Views\RouteDetail\Edit.cshtml" />
+    <Content Include="Views\RouteDetail\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -263,8 +269,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\RouteDetail\" />
-    <Folder Include="Views\ShiftDetail\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CabManagementSystem.Domain\CabManagementSystem.Domain.csproj">

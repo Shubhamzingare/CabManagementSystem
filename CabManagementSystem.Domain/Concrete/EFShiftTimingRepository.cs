@@ -13,16 +13,6 @@ namespace CabManagementSystem.Domain.Concrete
         private CabDbContext context = new CabDbContext();
         public IEnumerable<ShiftTiming> ShiftTimings => context.ShiftTimings;
 
-        public ShiftTiming DeleteShift(int id)
-        {
-            ShiftTiming dbEntry = context.ShiftTimings.Find(id);
-            if (dbEntry == null)
-            {
-                context.ShiftTimings.Remove(dbEntry);
-                context.SaveChanges();
-            }
-            return dbEntry;
-        }
 
         public void SaveShift(ShiftTiming shiftTiming)
         {
