@@ -18,11 +18,11 @@ namespace CabManagementSystem.Domain.Entities
 
         [Required(ErrorMessage = "Please enter start time")]
         [DataType(DataType.Time)]
-        public DateTime shiftStartTime { get; set; }
+        public Nullable<DateTime> shiftStartTime { get; set; }
 
         [Required(ErrorMessage = "Please enter end time")]
         [DataType(DataType.Time)]
-        public DateTime shiftEndTime { get; set; }
+        public Nullable<DateTime> shiftEndTime { get; set; }
 
         [Range(1, Int32.MaxValue)]
         public int totalBatches { get; set; }
