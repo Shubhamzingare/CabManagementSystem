@@ -11,6 +11,7 @@ using System.Net;
 
 namespace CabManagementSystem.WebUI.Controllers
 {
+    //This is employee controller
     public class EmployeeController : Controller
     {
         CabDbContext db = new CabDbContext();
