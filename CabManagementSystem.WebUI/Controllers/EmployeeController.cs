@@ -29,7 +29,7 @@ namespace CabManagementSystem.WebUI.Controllers
             EmployeeListViewModel model = new EmployeeListViewModel
             {
                 Employees = repository.Employees
-                            .OrderBy(p => p.empId)
+                                .OrderBy(p => p.empId)
                                 .Skip((page - 1) * PageSize)
                                 .Take(PageSize),
                 PagingInfo = new PagingInfo

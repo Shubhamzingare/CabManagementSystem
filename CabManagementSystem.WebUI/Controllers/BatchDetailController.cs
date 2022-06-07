@@ -15,7 +15,8 @@ namespace CabManagementSystem.WebUI.Controllers
         CabDbContext db = new CabDbContext();
 
         private IBatchDetailRepository repository;
-        public int PageSize = 1;
+
+        public int PageSize = 3;
         public BatchDetailController(IBatchDetailRepository repo)
         {
             this.repository = repo;
@@ -25,7 +26,7 @@ namespace CabManagementSystem.WebUI.Controllers
             BatchDetailViewModel model = new BatchDetailViewModel
             {
                 BatchDetails = repository.BatchDetails
-                .OrderBy(p => p.batchId)
+                                .OrderBy(p => p.batchId)
                                 .Skip((page - 1) * PageSize)
                                 .Take(PageSize),
                 PagingInfo = new PagingInfo
