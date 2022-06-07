@@ -213,7 +213,6 @@
     <Content Include="Views\ShiftTiming\Edit.cshtml" />
     <Content Include="Views\ShiftTiming\Create.cshtml" />
     <Content Include="Views\Shared\BatchDetailSummery.cshtml" />
-    <Content Include="Views\BatchDetail\BatchDetailList.cshtml" />
     <Content Include="Views\BatchDetail\Edit.cshtml" />
     <Content Include="Views\BatchDetail\Create.cshtml" />
     <Content Include="Views\VehicleDetail\Edit.cshtml" />
@@ -226,6 +225,7 @@
     <Content Include="Views\RouteDetail\Edit.cshtml" />
     <Content Include="Views\RouteDetail\Create.cshtml" />
     <Content Include="Views\ShiftDetail\ShiftDetailsByID.cshtml" />
+    <Content Include="Views\BatchDetail\BatchDetailList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
