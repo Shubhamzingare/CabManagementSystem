@@ -9,7 +9,7 @@
 </head>
 <body>
     <p>
-        @using (Html.BeginForm("ShiftDetailsByID", "ShiftDetail", FormMethod.Get))
+        @using (Html.BeginForm())
         {
             <b>Search by Shift ID:</b> <input type="text" placeholder="Enter shift ID" name="searchID" /> <input type="submit" value="search" />
         }
@@ -29,9 +29,9 @@
                 @if (Model.Count() == 0)
                 {
                     <tr>
-                        <td colspan="4" align="center">No Rows Found</td>
+                        <td colspan="4" align="center"style="color:red">No Rows Found</td>
                     </tr>
-                }
+                    }
                 @foreach (var p in Model)
                 {
                     <tr>
