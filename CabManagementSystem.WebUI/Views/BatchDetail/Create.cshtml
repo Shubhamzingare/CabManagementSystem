@@ -5,12 +5,12 @@
         <h3>Create New Batch</h3>
     </div>
 
-    @using (Html.BeginForm("Create", "BatchDetail", FormMethod.Get))
+    @using (Html.BeginForm("Create", "BatchDetail", FormMethod.Post))
     {
         <div class="form-horizontal " style="width: 800px; margin:50px; align-content:center">
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.batchId)
+           
 
             <div class="form-group">
                 <label for="batchId"><b>Bacth ID</b></label>

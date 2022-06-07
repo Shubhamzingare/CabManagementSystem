@@ -127,23 +127,6 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Models\UserDbModel\UserModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\UserDbModel\UserModel.edmx.diagram">
-      <DependentUpon>UserModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\UserDbModel\UserModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserModel.edmx</DependentUpon>
-      <LastGenOutput>UserModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\UserDbModel\UserModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserModel.edmx</DependentUpon>
-      <LastGenOutput>UserModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -166,13 +149,13 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\Dashboard\UserDashboard.cshtml" />
-    <Content Include="Views\Shared\_DashboardLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BatchDetailController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\TripController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\RouteDetailController.cs" />
     <Compile Include="Controllers\ShiftDetailController.cs" />
@@ -190,24 +173,7 @@
     <Compile Include="Models\RouteDetailListViewModel.cs" />
     <Compile Include="Models\ShiftDetailViewModel.cs" />
     <Compile Include="Models\ShiftTimingListViewModel.cs" />
-    <Compile Include="Models\UserDbModel\User.cs">
-      <DependentUpon>UserModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserDbModel\UserModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserDbModel\UserModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserDbModel\UserModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserModel.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Models\TripListViewModel.cs" />
     <Compile Include="Models\VehicleDetailListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -256,10 +222,10 @@
     <Content Include="Views\VehicleDetail\Create.cshtml" />
     <Content Include="Views\Trip\List.cshtml" />
     <Content Include="Views\Shared\TripListSummary.cshtml" />
-    <Content Include="Views\ShiftDetail\ShiftDetailsByID.cshtml" />
     <Content Include="Views\RouteDetail\RouteDetailsById.cshtml" />
     <Content Include="Views\RouteDetail\Edit.cshtml" />
     <Content Include="Views\RouteDetail\Create.cshtml" />
+    <Content Include="Views\ShiftDetail\ShiftDetailsByID.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

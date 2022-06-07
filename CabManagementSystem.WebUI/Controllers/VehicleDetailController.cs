@@ -58,6 +58,12 @@ namespace CabManagementSystem.WebUI.Controllers
                 return View(vehicleDetail);
             }
         }
+        [HttpGet]
+        public ViewResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
         public ActionResult Create(VehicleDetail vehicleDetail)
         {
             if (ModelState.IsValid)

@@ -5,14 +5,13 @@
         <h3>Add New Employee</h3>
     </div>
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Create", "Employee", FormMethod.Post))
     {
-        @Html.AntiForgeryToken()
+       
         <div class="form-horizontal " style="width: 800px; margin:50px; align-content:center">
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.empId)
-
+           
             <div class="form-group">
                 <label for="empName"><b>Employee Name</b></label>
                 <div class="col-md-10">

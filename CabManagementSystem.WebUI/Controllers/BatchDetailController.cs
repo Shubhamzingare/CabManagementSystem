@@ -56,6 +56,7 @@ namespace CabManagementSystem.WebUI.Controllers
                 return View(batchDetail);
             }
         }
+        [HttpGet]
         public ViewResult Create()
         {
             return View();

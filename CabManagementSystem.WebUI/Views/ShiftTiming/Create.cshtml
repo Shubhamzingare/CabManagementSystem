@@ -6,12 +6,12 @@
         <h3>Create @Model.ShiftName Shift</h3>
     </div>
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Create", "ShiftTiming", FormMethod.Post))
     {
         <div class="form-horizontal " style="width: 800px; margin:50px; align-content:center">
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.shiftId)
+            
 
             <div class="form-group">
                 <label for="ShiftName"><b>Shift Name</b></label>
