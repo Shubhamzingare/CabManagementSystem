@@ -62,6 +62,11 @@ namespace CabManagementSystem.WebUI.Controllers
                 return View(shiftTiming);
             }
         }
+        public ViewResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
         public ActionResult Create(ShiftTiming shiftTiming)
         {
             if (ModelState.IsValid)

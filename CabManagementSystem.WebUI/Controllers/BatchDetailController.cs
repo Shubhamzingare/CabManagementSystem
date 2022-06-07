@@ -56,6 +56,11 @@ namespace CabManagementSystem.WebUI.Controllers
                 return View(batchDetail);
             }
         }
+        public ViewResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
         public ActionResult Create(BatchDetail batchDetail)
         {
             if (ModelState.IsValid)
