@@ -16,6 +16,7 @@ namespace CabManagementSystem.Domain.Entities
         public string vehicleAlloId { get; set; }
 
         public string vehicleId { get; set; }
+        public int ratePerKM { get; set; }
 
         [Required(ErrorMessage = "Please enter distance travelled in kms")]
         public decimal distanceTravelled { get; set; }
