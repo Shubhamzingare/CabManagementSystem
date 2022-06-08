@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace CabManagementSystem.Domain.Abstract
 {
-    public interface ITripRepository
+    public interface ITripSheetRepository
     {
-        IEnumerable<Trip> TripSheet { get; }
+        IEnumerable<TripSheet> TripSheet { get; }
     }
 }

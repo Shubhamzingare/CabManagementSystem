@@ -6,9 +6,11 @@ using CabManagementSystem.Domain.Entities;
 
 namespace CabManagementSystem.WebUI.Models
 {
-    public class TripListViewModel
+    public class TripSheetViewModel
     {
-        public IEnumerable<Trip> TripSheet { get; set; }
+        public VehicleBill VehicleBills { get; set; }
+        public VehicleDetail VehicleDetails { get; set; }
+        public TripSheet TripSheets { get; set; }
         public PagingInfo PagingInfo { get; set; }
     }
 }
