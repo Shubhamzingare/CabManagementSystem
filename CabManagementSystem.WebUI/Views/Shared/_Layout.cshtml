@@ -14,25 +14,70 @@
     <link href="~/Content/bootstrap.rtl.css" rel="stylesheet" />
     <link href="~/Content/Dropdown.css" rel="stylesheet" />
     <link href="~/Content/allcssstyling.css" rel="stylesheet" />
+    <script src="~/Scripts/navbar script.js"></script>
+    <link href="~/Content/LoginPage.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    @*<div class="navbar navbar-dark bg-dark">
+            <div class="container">
+                <div class="navbar-header">
+                    @Html.ActionLink("Cab Management System", "Login", "User", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark  scrolling-navbar">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Cab Management System", "Login", "User", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+            <a class="navbar-brand">
+                <strong>Cab Management System</strong>
+            </a>
+
+             @*Collapse*@ 
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+                <!-- Left -->
+                <ul class="navbar-nav me-lg-auto me-sm-auto me-md-auto ">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="~/Dashboard/UserDashboard">
+                            Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item me-4">
+                        <a class="nav-link" href="~/BatchDetail/BatchDetailList" target="_self">About MDB</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://mdbootstrap.com/getting-started/" target="_blank">Free download</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank">Free tutorials</a>
+                    </li>
                 </ul>
+
+                <!-- Right -->
+                   <ul class="navbar-nav nav-flex-icons">
+                    <li class="nav-right align-items-sm-end">
+                        <a class="nav-link border border-light rounded">
+                            <i class="fab fa-github mr-2"></i>MDB GitHub
+                        </a>
+                    </li>
+                </ul>
+
             </div>
+
         </div>
-    </div>
+    </nav>
+
     <div>
         @RenderBody()
     </div>

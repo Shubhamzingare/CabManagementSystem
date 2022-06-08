@@ -13,6 +13,7 @@ using CabManagementSystem.Domain.Abstract;
 
 namespace CabManagementSystem.WebUI.Controllers
 {
+    [Authorize]
     public class RouteDetailController : Controller
     {
         private IRouteDetailRepository repository;
@@ -24,7 +25,7 @@ namespace CabManagementSystem.WebUI.Controllers
 
         private CabDbContext db = new CabDbContext();
 
-
+        [AllowAnonymous]
         public ViewResult RouteDetailsById()
         {
             int id = Convert.ToInt32(Request["ID"]);
@@ -44,13 +45,14 @@ namespace CabManagementSystem.WebUI.Controllers
 
 
         }
-
+        [AllowAnonymous]
         public ViewResult Edit(int id)
         {
             RouteDetail routeDetail = repository.RouteDetails.FirstOrDefault(p => p.routeId == id);
             return View(routeDetail);
         }
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult Edit(RouteDetail routeDetail)
         {
             if (ModelState.IsValid)
@@ -65,11 +67,13 @@ namespace CabManagementSystem.WebUI.Controllers
             }
         }
         [HttpGet]
+        [AllowAnonymous]
         public ViewResult Create()
         {
             return View();
         }
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult Create(RouteDetail routeDetail)
         {
             if (ModelState.IsValid)
