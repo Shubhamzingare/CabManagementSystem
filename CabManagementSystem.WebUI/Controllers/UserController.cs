@@ -11,7 +11,6 @@ namespace CabManagementSystem.WebUI.Controllers
     public class UserController : Controller
     {
         CabDbContext context = new CabDbContext();
-        //GET : login 
         public ActionResult Index()
         {
             return View();
