@@ -53,6 +53,7 @@ namespace CabManagementSystem.WebUI.Controllers
                 {
                     ViewBag.InsertMessage = "<script>alert('Registered Successfully')</script>";
                     ModelState.Clear();
+                    return RedirectToAction("Index");
                 }
                 else
                 {
