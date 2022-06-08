@@ -5,55 +5,6 @@
     ViewBag.Title = "Cab Management System";
 }
 
-<h2>Login</h2>
-
-@*@Html.Raw(ViewBag.ErrorMessage)
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-horizontal">
-            <h4>User</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.UserType, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownListFor(model => model.UserType, new SelectList(new[] { "Administrator", "HR-Manager" }), "Select Usertype", new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Login" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
-    }
-
-    <div>
-        Not Registerd yet? click here to @Html.ActionLink("Register", "Register")
-    </div>*@
 @Html.Raw(ViewBag.ErrorMessage)
 
 @using (Html.BeginForm("Index", "User", FormMethod.Post))
@@ -100,7 +51,6 @@
                                                 Log
                                                 in
                                             </button>
-                                            @*<a class="text-muted" href="#!">Forgot password?</a>*@
                                         </div>
 
                                         <div class="d-flex align-items-center justify-content-center pb-4">
@@ -116,11 +66,21 @@
                             </div>
                             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                    <h4 class="mb-4">We are more than just a company</h4>
+                                    <h4 class="mb-4">We are more than just a Team</h4>
                                     <p class="small mb-0">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        This project was written in C# and data are stored in a MySQL Database using 
+                                        Technologies –
+                                        <ol type="1">
+                                            <li>ASP.NET MVC 5</li>
+                                            <li>ASP.NET Web API</li>
+                                            <li> Entity Framework 6.0</li>
+                                        </ol>
+                                        This project is a web-based application that provides an online cab
+                                        platform for the two users as Administrator, HR Manager. This application can also help operator's
+                                        to have an efficient and effective way for them to edit and create various detailsin system.
+                                        The application is easy to use and has user-friendly features and functionalities.
+                                        It also has a simple and pleasant user interface to give end-users a better experience
+                                        while using the web application.
                                     </p>
                                 </div>
                             </div>
