@@ -7,50 +7,127 @@
 
 <h2>Login</h2>
 
+@*@Html.Raw(ViewBag.ErrorMessage)
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>User</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserType, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.UserType, new SelectList(new[] { "Administrator", "HR-Manager" }), "Select Usertype", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Login" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        Not Registerd yet? click here to @Html.ActionLink("Register", "Register")
+    </div>*@
 @Html.Raw(ViewBag.ErrorMessage)
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Index", "User", FormMethod.Post))
 {
-    @Html.AntiForgeryToken()
+    <section class="h-100 gradient-form" style="background-color: #eee;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
+                                <div class="card-body p-md-5 mx-md-4">
+                                    <div class="text-center">
+                                        <img src="https://i.gifer.com/VdgG.gif"
+                                             style="width: 185px;" alt="logo">
+                                        <h4 class="mt-1 mb-5 pb-1">We are The Zensar Team</h4>
+                                    </div>
 
-    <div class="form-horizontal">
-        <h4>User</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <form>
+                                        <h3>Please login to your account</h3>
+                                        <hr />
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserType, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.UserType, new SelectList(new[] { "Administrator", "HR-Manager" }), "Select Usertype", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
+                                        <div class="form-outline mb-4 dropdown">
+                                            @Html.DropDownListFor(model => model.UserType, new SelectList(new[] { "Administrator", "HR-Manager" }), "Select Usertype", new { @class = "form-control dropdown-content" })
+                                            @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
+                                            <br />
+                                            <label class="form-label" for="UserType"><b>Select User Type from here</b></label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-input", @placeholder = " Enter Username or email address" })
+                                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                            <label class="form-label" for="UserName"><b>Username</b></label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            @Html.TextBoxFor(m => m.Password, new { @class = "form-input", @placeholder = " Enter password", @type = "password" })
+                                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                            <label class="form-label" for="Password"><b>Password</b></label>
+                                        </div>
+
+                                        <div class="text-center pt-1 mb-5 pb-1">
+                                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">
+                                                Log
+                                                in
+                                            </button>
+                                            @*<a class="text-muted" href="#!">Forgot password?</a>*@
+                                        </div>
+
+                                        <div class="d-flex align-items-center justify-content-center pb-4">
+                                            <p class="mb-0 me-2">Don't have an account?</p>
+                                            <button type="button" class="btn btn-outline-danger">
+                                                @Html.ActionLink("Register", "Register")
+                                            </button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                    <h4 class="mb-4">We are more than just a company</h4>
+                                    <p class="small mb-0">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Login" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
+    </section>
 }
-
-<div>
-    Not Registerd yet? click here to @Html.ActionLink("Register", "Register")
-</div>

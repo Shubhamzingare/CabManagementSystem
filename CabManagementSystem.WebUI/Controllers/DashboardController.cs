@@ -6,8 +6,11 @@ using System.Web.Mvc;
 
 namespace CabManagementSystem.WebUI.Controllers
 {
+    [Authorize]
     public class DashboardController : Controller
     {
+        
+        [AllowAnonymous]
         public ActionResult UserDashboard()
         {
             if (Session["UserType"] == null)
@@ -19,7 +22,7 @@ namespace CabManagementSystem.WebUI.Controllers
                 return View();
             }
         }
-
+        [AllowAnonymous]
         public ActionResult Logout()
         {
             Session.Abandon();

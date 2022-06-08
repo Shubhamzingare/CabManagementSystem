@@ -8,11 +8,14 @@ using CabManagementSystem.Domain.Concrete;
 using CabManagementSystem.WebUI.Models;
 namespace CabManagementSystem.WebUI.Controllers
 {
+    [Authorize]
     public class ShiftDetailController : Controller
     {
 
 
         private CabDbContext context = new CabDbContext();
+
+        [AllowAnonymous]
         public ActionResult ShiftDetailsByID()
         {
             int id = Convert.ToInt32(Request["searchID"]);
