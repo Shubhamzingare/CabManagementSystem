@@ -25,20 +25,40 @@ namespace CabManagementSystem.WebUI.Controllers
 
         public ViewResult List(int page = 1)
         {
-            TripListViewModel model = new TripListViewModel
+            int rate = Convert.ToInt32(Request["ID"]);
+            List<Trip> TripSheet = db.TripSheet.ToList();
+            List<VehicleDetail> VehicleDetails = db.VehicleDetails.ToList();
+            var Details = from t in TripSheet
+                          join v in VehicleDetails on t.ratePerKM
+                          equals v.ratePerKM into table1
+                          from v in table1.ToList()
+                          where (v.ratePerKM == rate)
+                          select new TripListViewModel
+                          {
+                              TripSheet = t,
+                              VehicleDetails = v
+                          };
+            return View(Details);
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public ViewResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult Create(Trip trip)
+        {
+            if (ModelState.IsValid)
             {
-                TripSheet = repository.TripSheet
-                            .OrderBy(t => t.tripSheetId)
-                                .Skip((page - 1) * PageSize)
-                                .Take(PageSize),
-                PagingInfo = new PagingInfo
-                {
-                    CurrentPage = page,
-                    ItemsPerPage = PageSize,
-                    TotalItems = repository.TripSheet.Count()
-                }
-            };
-            return View(model);
+                db.TripSheet.Add(trip);
+                db.SaveChanges();
+                return RedirectToAction("List");
+            }
+
+            return View(trip);
         }
     }
 }
