@@ -15,6 +15,5 @@ namespace CabManagementSystem.WebUI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-        }
     }
 }
