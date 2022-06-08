@@ -11,111 +11,114 @@
 {
     @Html.Raw(ViewBag.InsertMessage)
 
-    <section class="h-100 gradient-form" style="background-color: #eee;">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-xl-10">
-                    <div class="card rounded-3 text-black">
-                        <div class="row g-0">
-                            <div class="col-lg-6">
-                                <div class="card-body p-md-5 mx-md-4">
-                                    <div class="text-center">
-                                        <img src="https://i.gifer.com/VdgG.gif"
-                                             style="width: 185px;" alt="logo">
-                                        <h4 class="mt-1 mb-5 pb-1">We are The Zensar Team</h4>
+    <!DOOCTYPE html>
+    <html>
+        <head>
+            <style>
+                .form-input{
+                    height: 1cm;
+                }
+
+            </style>
+        </head>
+        <body>
+            <section class="h-100 gradient-form" style="background-color: #eee;">
+                <div class="container py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-xl-10">
+                            <div class="card rounded-3 text-black">
+                                <div class="row g-0">
+
+                                    <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                                        <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                            <h1 class="mb-4">Register Here!!!</h1>
+                                            <br />
+                                            <p class="small mb-0">
+                                                <h2>Lets get you on board</h2>
+                                            </p>
+                                        </div>
                                     </div>
 
-                                    <form>
-                                        <h3>Please Reister to this service</h3>
-                                        <hr />
 
-                                        <div class="form-outline mb-4">
-                                            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-                                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-input", @placeholder = " Enter your first name here" })
-                                            <label class="form-label" for="FirstName"><b>First Name</b></label>
-                                        </div>
+                                    <div class="col-lg-6">
+                                        <div class="card-body p-md-5 mx-md-4">
+                                            <div class="text-center">
+                                                <img src="https://i.gifer.com/VdgG.gif"
+                                                     style="width: 185px;" alt="logo">
+                                                <h4 class="mt-1 mb-5 pb-1">We are The Zensar Team</h4>
+                                            </div>
+                                            <form>
+                                                <h3 align="center">Register</h3>
+                                                <hr />
 
-                                        <div class="form-outline mb-4">
-                                            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-                                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-input", @placeholder = " Enter your last name here" })
-                                            <label class="form-label" for="FirstName"><b>Last Name</b></label>
-                                        </div>
+                                                <div class="form-outline mb-4">
+                                                    <label class="form-label" for="FirstName"><b>First Name</b></label>
+                                                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-input", @placeholder = " Enter your first name" })
+                                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                                </div>
 
-                                        <div class="form-outline mb-4 dropdown">
-                                            @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
-                                            @Html.DropDownListFor(model => model.UserType, new SelectList(new[] { "Administrator", "HR-Manager" }), "Select Usertype", new { @class = "form-control dropdown-content" })
-                                            <label class="form-label" for="UserType"><b>Select User Type from here</b></label>
-                                        </div>
+                                                <div class="form-outline mb-4">
+                                                    <label class="form-label" for="LastName"><b>Last Name</b></label>
+                                                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-input", @placeholder = " Enter your last name" })
+                                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
 
-                                        <div class="form-outline mb-4">
-                                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-input", @placeholder = " Enter your last name here" })
-                                            <label class="form-label" for="FirstName"><b>Email</b></label>
-                                        </div>
+                                                </div>
 
-                                        <div class="form-outline mb-4">
-                                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-input", @placeholder = " Enter Username or email address" })
-                                            <label class="form-label" for="UserName"><b>Username</b></label>
-                                        </div>
+                                                <div class="form-outline mb-4 dropdown">
+                                                    <label class="form-label" for="UserType"><b>User Type</b></label>
+                                                    @Html.DropDownListFor(model => model.UserType, new SelectList(new[] { "Administrator", "HR-Manager" }), "Select Usertype", new { @class = "form-control dropdown-content" })
+                                                    @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
+                                                </div>
 
-                                        <div class="form-outline mb-4">
-                                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                                            @Html.TextBoxFor(m => m.Password, new { @class = "form-input", @placeholder = " Enter password", @type = "password" })
-                                            <label class="form-label" for="Password"><b>Password</b></label>
-                                        </div>
+                                                <div class="form-outline mb-4">
+                                                    <label class="form-label" for="Email"><b>Email</b></label>
+                                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-input", @placeholder = " Enter your email " })
+                                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                                </div>
 
-                                        <div class="form-outline mb-4">
-                                            @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
-                                            @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-input", @placeholder = " Enter password", @type = "password" })
-                                            <label class="form-label" for="Password"><b>Confirm Password</b></label>
-                                        </div>
+                                                <div class="form-outline mb-4">
+                                                    <label class="form-label" for="UserName"><b>Username</b></label>
+                                                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-input", @placeholder = " Enter your Username" })
+                                                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                                </div>
 
-                                        <div class="text-right pt-1 mb-5 pb-1">
-                                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">
-                                                Register
-                                            </button>
-                                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="reset">
-                                                Cancel
-                                            </button>
-                                        </div>
-                                        <div>
+                                                <div class="form-outline mb-4">
+                                                    <label class="form-label" for="Password"><b>Password</b></label>
+                                                    @Html.TextBoxFor(m => m.Password, new { @class = "form-input", @placeholder = " Enter your password", @type = "password" })
+                                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                                </div>
+
+                                                <div class="form-outline mb-4">
+                                                    <label class="form-label" for="Password"><b>Confirm Password</b></label>
+                                                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-input", @placeholder = " Confirm your password", @type = "password" })
+                                                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                                                </div>
+
+                                                <div class="text-right pt-1 mb-5 pb-1">
+                                                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">
+                                                        Register
+                                                    </button>
+                                                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="reset">
+                                                        Cancel
+                                                    </button>
+                                                </div>
+                                                
+                                                <div class="d-flex align-items-center justify-content-center pb-4">
+                                                     <p class="mb-0 me-2">Already have an account?</p>
+                                                        <button type="button" class="btn btn-outline-danger">
+                                                             @Html.ActionLink("Back to Login Page", "Index")
+                                                        </button>
+                                                </div>
+                                            </form>
 
                                         </div>
-                                        <div class="d-flex align-items-center justify-content-center pb-4">
-                                            <p class="mb-0 me-2">Already have an account?</p>
-                                            <button type="button" class="btn btn-outline-danger">
-                                                @Html.ActionLink("Back to Login Page", "Index")
-                                            </button>
-                                        </div>
-                                    </form>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-                                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                    <h4 class="mb-4">We are more than just a Team</h4>
-                                    <p class="small mb-0">
-                                        This project was written in C# and data are stored in a MySQL Database using
-                                        Technologies –
-                                        <ol type="1">
-                                            <li>ASP.NET MVC 5</li>
-                                            <li>ASP.NET Web API</li>
-                                            <li> Entity Framework 6.0</li>
-                                        </ol>
-                                        This project is a web-based application that provides an online cab
-                                        platform for the two users as Administrator, HR Manager. This application can also help operator's
-                                        to have an efficient and effective way for them to edit and create various detailsin system.
-                                        The application is easy to use and has user-friendly features and functionalities.
-                                        It also has a simple and pleasant user interface to give end-users a better experience
-                                        while using the web application.
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
+        </body>
+    </html>
 }
