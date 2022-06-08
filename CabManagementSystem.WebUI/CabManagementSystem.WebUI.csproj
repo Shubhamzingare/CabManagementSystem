@@ -158,13 +158,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BatchDetailController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
-    <Compile Include="Controllers\TripController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\RouteDetailController.cs" />
     <Compile Include="Controllers\ShiftDetailController.cs" />
     <Compile Include="Controllers\ShiftTimingController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VehicleAllocationController.cs" />
+    <Compile Include="Controllers\TripSheetController.cs" />
     <Compile Include="Controllers\VehicleDetailController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -177,8 +177,8 @@
     <Compile Include="Models\RouteDetailListViewModel.cs" />
     <Compile Include="Models\ShiftDetailViewModel.cs" />
     <Compile Include="Models\ShiftTimingListViewModel.cs" />
-    <Compile Include="Models\TripListViewModel.cs" />
     <Compile Include="Models\VehicalAllocationListViewModel.cs" />
+    <Compile Include="Models\TripSheetViewModel.cs" />
     <Compile Include="Models\VehicleDetailListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -224,7 +224,6 @@
     <Content Include="Views\Shared\VehicleDetailSummery.cshtml" />
     <Content Include="Views\VehicleDetail\VehicleDetailList.cshtml" />
     <Content Include="Views\VehicleDetail\Create.cshtml" />
-    <Content Include="Views\Trip\List.cshtml" />
     <Content Include="Views\Shared\TripListSummary.cshtml" />
     <Content Include="Views\RouteDetail\RouteDetailsById.cshtml" />
     <Content Include="Views\RouteDetail\Edit.cshtml" />
@@ -243,6 +242,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\VehicleBill\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CabManagementSystem.Domain\CabManagementSystem.Domain.csproj">

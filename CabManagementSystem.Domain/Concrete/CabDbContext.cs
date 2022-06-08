@@ -15,7 +15,7 @@ namespace CabManagementSystem.Domain.Concrete
         public DbSet<RouteDetail> RouteDetails { get; set; }
         public DbSet<BatchDetail> BatchDetails { get; set; }
         public DbSet<VehicleDetail> VehicleDetails { get; set; }
-        public DbSet<Trip> TripSheet { get; set; }
+        public DbSet<TripSheet> TripSheets { get; set; }
         public DbSet<User> Users { get; set; }
 
         public DbSet<VehicleBill> VehicleBills { get; set; }

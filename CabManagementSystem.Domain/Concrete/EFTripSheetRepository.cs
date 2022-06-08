@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace CabManagementSystem.Domain.Concrete
 {
-    public class EFTripRepository : ITripRepository
+    public class EFTripSheetRepository : ITripSheetRepository
     {
         private CabDbContext context = new CabDbContext();
 
-        public IEnumerable<Trip> TripSheet => context.TripSheet;
+        public IEnumerable<TripSheet> TripSheet => context.TripSheets;
 
     }
 }
