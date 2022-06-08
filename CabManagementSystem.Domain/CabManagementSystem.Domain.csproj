@@ -84,6 +84,7 @@
     <Compile Include="Abstract\IRouteDetailRepository.cs" />
     <Compile Include="Abstract\IShiftTimingsRepository.cs" />
     <Compile Include="Abstract\ITripRepository.cs" />
+    <Compile Include="Abstract\IVehicleAllocationRepository.cs" />
     <Compile Include="Abstract\IVehicleDetailRepository.cs" />
     <Compile Include="Concrete\CabDbContext.cs" />
     <Compile Include="Concrete\EFBatchDetailRepository.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Entities\ShiftTiming.cs" />
     <Compile Include="Entities\Trip.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\VehicleAllocationDetail.cs" />
     <Compile Include="Entities\VehicleDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
