@@ -166,6 +166,7 @@
     <Compile Include="Controllers\ShiftTimingController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\TripSheetController.cs" />
+    <Compile Include="Controllers\VehicleAllocationController.cs" />
     <Compile Include="Controllers\VehicleDetailController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -179,6 +180,7 @@
     <Compile Include="Models\ShiftDetailViewModel.cs" />
     <Compile Include="Models\ShiftTimingListViewModel.cs" />
     <Compile Include="Models\TripSheetViewModel.cs" />
+    <Compile Include="Models\VehicleAllocationViewModel.cs" />
     <Compile Include="Models\VehicleDetailListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -232,6 +234,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.0.min.map" />
+    <Content Include="Views\VehicleAllocation\VehicalAllocationList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -102,6 +102,7 @@
     <Compile Include="Abstract\IRouteDetailRepository.cs" />
     <Compile Include="Abstract\IShiftTimingsRepository.cs" />
     <Compile Include="Abstract\ITripSheetRepository.cs" />
+    <Compile Include="Abstract\IVehicleAllocationRepository.cs" />
     <Compile Include="Abstract\IVehicleBillRepository.cs" />
     <Compile Include="Abstract\IVehicleDetailRepository.cs" />
     <Compile Include="Concrete\CabDbContext.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Concrete\EFShiftTimingRepository.cs" />
     <Compile Include="Concrete\EFTripSheetRepository.cs" />
     <Compile Include="Concrete\EFUserRepository.cs" />
+    <Compile Include="Concrete\EFVehicleAllocationRepository.cs" />
     <Compile Include="Concrete\EFVehicleBillRepository.cs" />
     <Compile Include="Concrete\EFVehicleDetailRepository.cs" />
     <Compile Include="CustomValidations\EmployeeDOBValidation.cs" />
@@ -121,6 +123,7 @@
     <Compile Include="Entities\ShiftTiming.cs" />
     <Compile Include="Entities\TripSheet.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\VehicleAllocation.cs" />
     <Compile Include="Entities\VehicleDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
