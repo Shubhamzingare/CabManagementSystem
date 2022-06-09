@@ -13,13 +13,13 @@ namespace CabManagementSystem.Domain.Entities
         public int billId { get; set; }
         public int billNum { get; set; }
         public int vehicleId { get; set; }
-        public decimal totalAmount { get; set; }
+        [Required]
+        public int totalAmount { get; set; }
 
-        [DataType(DataType.Date)]
+        [Required]
         public DateTime dateOfBilling { get; set; }
         public int venderId { get; set; }
-        public decimal deductions { get; set; }
-        public decimal netAmount { get; set; }
-
+        public int deductions { get; set; }
+        public int netAmount { get; set; }
     }
 }

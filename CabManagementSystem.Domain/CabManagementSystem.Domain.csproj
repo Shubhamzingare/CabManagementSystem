@@ -124,6 +124,7 @@
     <Compile Include="Entities\TripSheet.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\VehicleAllocationDetail.cs" />
+    <Compile Include="Entities\VehicleBill.cs" />
     <Compile Include="Entities\VehicleDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

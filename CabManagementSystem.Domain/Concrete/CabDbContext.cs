@@ -20,7 +20,7 @@ namespace CabManagementSystem.Domain.Concrete
 
         public DbSet<VehicleAllocationDetail> VehicleAllocations { get; set; }
 
-        //public DbSet<VehicleBill> VehicleBills { get; set; }
+        public DbSet<VehicleBill> VehicleBills { get; set; }
 
     }
 }

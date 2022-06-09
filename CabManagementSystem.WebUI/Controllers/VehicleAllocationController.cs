@@ -52,7 +52,7 @@ namespace CabManagementSystem.WebUI.Controllers
             {
                 db.VehicleAllocations.Add(vehicleAllocation);
                 db.SaveChanges();
-                return RedirectToAction("Create");
+                return RedirectToAction("VehicleAllocationList");
             }
 
             return View(vehicleAllocation);

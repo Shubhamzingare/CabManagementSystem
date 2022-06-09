@@ -10,6 +10,7 @@ namespace CabManagementSystem.Domain.Entities
     public class VehicleAllocationDetail
     {
         [Key]
+        [Required]
         public int vehicleAlloId { get; set; }
         public int vehicleId { get; set; }
         public int empId { get; set; }

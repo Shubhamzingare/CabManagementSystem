@@ -10,5 +10,6 @@ namespace CabManagementSystem.Domain.Abstract
     {
         IEnumerable<VehicleAllocationDetail> VehicleAllocations { get; }
 
+        void SaveVehicleAllocation(VehicleAllocationDetail vehicleAllocationDetail);
     }
 }
