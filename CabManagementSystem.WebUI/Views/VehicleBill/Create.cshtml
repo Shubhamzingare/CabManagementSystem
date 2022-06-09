@@ -1,8 +1,5 @@
 ﻿@model CabManagementSystem.Domain.Entities.VehicleBill
 
-@{
-    Layout = null;
-}
 
 <!DOCTYPE html>
 
@@ -12,7 +9,64 @@
     <title>Create</title>
 </head>
 <body>
-    <div> 
-    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="form-label" for="billId"><b>Bill ID</b></label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.billId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.billId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="billNum"><b>Bill Number</b></label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.billNum, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.billNum, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="vehicleId"><b>Vehicle ID</b></label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.vehicleId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.vehicleId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="dateOfBilling"><b>Date Of Billing</b></label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dateOfBilling, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.dateOfBilling, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="venderId"><b>Vender ID</b></label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.venderId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.venderId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="deductions"><b>Dedutions</b></label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.deductions, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.deductions, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" /> <input type="reset" value="Cancel" class="btn btn-default" />
+            </div>
+        </div>
+        <div>
+            @Html.ActionLink("Back to List", "VehicleBillList")
+        </div>
+    }
 </body>
 </html>

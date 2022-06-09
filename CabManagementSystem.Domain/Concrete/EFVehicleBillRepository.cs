@@ -29,11 +29,9 @@ namespace CabManagementSystem.Domain.Concrete
                     dbEntry.billId = vehicleBill.billId;
                     dbEntry.billNum = vehicleBill.billNum;
                     dbEntry.vehicleId = vehicleBill.vehicleId;
-                    dbEntry.totalAmount = vehicleBill.totalAmount;
                     dbEntry.dateOfBilling = vehicleBill.dateOfBilling;
                     dbEntry.venderId = vehicleBill.vehicleId;
                     dbEntry.deductions = vehicleBill.deductions;
-                    dbEntry.netAmount = vehicleBill.netAmount;
                 }
             }
             context.SaveChanges();
