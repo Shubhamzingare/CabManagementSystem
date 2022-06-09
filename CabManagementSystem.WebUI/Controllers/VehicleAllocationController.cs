@@ -14,51 +14,51 @@ namespace CabManagementSystem.WebUI.Controllers
     {
         // GET: VehicleAllocation
 
-        CabDbContext db = new CabDbContext();
+        //CabDbContext db = new CabDbContext();
 
-        public int PageSize = 3;
+        //public int PageSize = 3;
 
-        private IVehicleAllocationRepository repository;
+        //private IVehicleAllocationRepository repository;
 
-        public VehicleAllocationController(IVehicleAllocationRepository repo)
-        {
-            this.repository = repo;
-        }
+        //public VehicleAllocationController(IVehicleAllocationRepository repo)
+        //{
+        //    this.repository = repo;
+        //}
 
-        public ViewResult list(int page = 1)
-        {
-            VehicalAllocationListViewModel model = new VehicalAllocationListViewModel
-            {
-                VehicleAllocationDetails = repository.VehicleAllocationDetails
-                 .OrderBy(p => p.vehicleId)
-                                .Skip((page - 1) * PageSize)
-                                .Take(PageSize),
-                PagingInfo = new PagingInfo
-                {
-                    CurrentPage = page,
-                    ItemsPerPage = PageSize,
-                    TotalItems = repository.VehicleAllocationDetails.Count()
-                }
+        //public ViewResult list(int page = 1)
+        //{
+        //    VehicalAllocationListViewModel model = new VehicalAllocationListViewModel
+        //    {
+        //        VehicleAllocationDetails = repository.VehicleAllocationDetails
+        //         .OrderBy(p => p.vehicleId)
+        //                        .Skip((page - 1) * PageSize)
+        //                        .Take(PageSize),
+        //        PagingInfo = new PagingInfo
+        //        {
+        //            CurrentPage = page,
+        //            ItemsPerPage = PageSize,
+        //            TotalItems = repository.VehicleAllocationDetails.Count()
+        //        }
 
-            };
-            return View(model);
-        }
-        [HttpGet]
-        public ViewResult Create()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Create(VehicleAllocationDetail VehicleDetail)
-        {
-            if (ModelState.IsValid)
-            {
-                db.VehicleAllocationDetails.Add(VehicleDetail);
-                db.SaveChanges();
-                return RedirectToAction("Create");
-            }
+        //    };
+        //    return View(model);
+        //}
+        //[HttpGet]
+        //public ViewResult Create()
+        //{
+        //    return View();
+        //}
+        //[HttpPost]
+        //public ActionResult Create(VehicleAllocationDetail VehicleDetail)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.VehicleAllocationDetails.Add(VehicleDetail);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Create");
+        //    }
 
-            return View(VehicleDetail);
-        }
+        //    return View(VehicleDetail);
+        //}
     }
 }
