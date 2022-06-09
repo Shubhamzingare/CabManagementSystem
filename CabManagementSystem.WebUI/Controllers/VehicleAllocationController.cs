@@ -26,7 +26,7 @@ namespace CabManagementSystem.WebUI.Controllers
         {
             VehicleAllocationViewModel model = new VehicleAllocationViewModel
             {
-                VehicleAllocations = repository.vehicleAllocations
+                VehicleAllocations = repository.VehicleAllocations
                  .OrderBy(p => p.vehicleId)
                                 .Skip((page - 1) * PageSize)
                                 .Take(PageSize),
@@ -34,7 +34,7 @@ namespace CabManagementSystem.WebUI.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalItems = repository.vehicleAllocations.Count()
+                    TotalItems = repository.VehicleAllocations.Count()
                 }
 
             };
@@ -46,7 +46,7 @@ namespace CabManagementSystem.WebUI.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(VehicleAllocation vehicleAllocation)
+        public ActionResult Create(VehicleAllocationDetail vehicleAllocation)
         {
             if (ModelState.IsValid)
             {

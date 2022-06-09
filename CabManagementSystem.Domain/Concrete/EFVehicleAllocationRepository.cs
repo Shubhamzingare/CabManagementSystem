@@ -11,7 +11,6 @@ namespace CabManagementSystem.Domain.Concrete
     public class EFVehicleAllocationRepository : IVehicleAllocationRepository
     {
         CabDbContext context = new CabDbContext();
-
-        public IEnumerable<VehicleAllocation> vehicleAllocations => context.VehicleAllocations;
+        public IEnumerable<VehicleAllocationDetail> VehicleAllocations => context.VehicleAllocations;
     }
 }

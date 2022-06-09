@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CabManagementSystem.Domain.Entities
 {
-    public class VehicleAllocation
+    public class VehicleAllocationDetail
     {
         [Key]
         public int vehicleAlloId { get; set; }

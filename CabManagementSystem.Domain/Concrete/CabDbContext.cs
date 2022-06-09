@@ -18,7 +18,7 @@ namespace CabManagementSystem.Domain.Concrete
         public DbSet<TripSheet> TripSheets { get; set; }
         public DbSet<User> Users { get; set; }
 
-        public DbSet<VehicleAllocation> VehicleAllocations { get; set; }
+        public DbSet<VehicleAllocationDetail> VehicleAllocations { get; set; }
 
         //public DbSet<VehicleBill> VehicleBills { get; set; }
 

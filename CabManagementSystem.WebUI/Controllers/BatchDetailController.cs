@@ -10,7 +10,7 @@ using CabManagementSystem.WebUI.Models;
 
 namespace CabManagementSystem.WebUI.Controllers
 {
-    [Authorize]
+   // [Authorize]
     public class BatchDetailController : Controller
     {
         CabDbContext db = new CabDbContext();
@@ -22,7 +22,7 @@ namespace CabManagementSystem.WebUI.Controllers
         {
             this.repository = repo;
         }
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ViewResult BatchDetailList(int page = 1)
         {
             BatchDetailViewModel model = new BatchDetailViewModel
@@ -47,7 +47,7 @@ namespace CabManagementSystem.WebUI.Controllers
             return View(batchDetail);
         }
         [HttpPost]
-        [AllowAnonymous]
+       // [AllowAnonymous]
         public ActionResult Edit(BatchDetail batchDetail)
         {
             if (ModelState.IsValid)

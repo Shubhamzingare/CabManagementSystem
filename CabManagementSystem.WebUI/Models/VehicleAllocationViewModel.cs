@@ -8,7 +8,7 @@ namespace CabManagementSystem.WebUI.Models
 {
     public class VehicleAllocationViewModel
     {
-        public IEnumerable<VehicleAllocation> VehicleAllocations { get; set; }
+        public IEnumerable<VehicleAllocationDetail> VehicleAllocations { get; set; }
         public PagingInfo PagingInfo { get; set; }
     }
 }
