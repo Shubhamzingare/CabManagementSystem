@@ -236,6 +236,7 @@
     <Content Include="Views\VehicleAllocation\VehicleAllocationList.cshtml" />
     <Content Include="Views\Shared\VehicleAllocationSummery.cshtml" />
     <Content Include="Views\VehicleAllocation\Create.cshtml" />
+    <Content Include="Views\TripSheet\TripSheet.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

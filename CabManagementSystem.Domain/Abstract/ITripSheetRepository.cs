@@ -10,5 +10,7 @@ namespace CabManagementSystem.Domain.Abstract
     public interface ITripSheetRepository
     {
         IEnumerable<TripSheet> TripSheet { get; }
+
+        void SaveSheet(TripSheet tripSheet);
     }
 }

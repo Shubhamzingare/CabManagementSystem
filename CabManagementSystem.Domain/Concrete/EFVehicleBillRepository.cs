@@ -8,7 +8,7 @@ using CabManagementSystem.Domain.Entities;
 
 namespace CabManagementSystem.Domain.Concrete
 {
-    public class EFVehicleBillRepository ///* IVehicleBillRepository*/
+    public class EFVehicleBillRepository : IVehicleBillRepository
     {
         private CabDbContext context = new CabDbContext();
         public IEnumerable<ShiftTiming> ShiftTimings => context.ShiftTimings;
