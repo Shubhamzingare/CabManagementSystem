@@ -165,7 +165,6 @@
     <Compile Include="Controllers\ShiftDetailController.cs" />
     <Compile Include="Controllers\ShiftTimingController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\VehicleAllocationController.cs" />
     <Compile Include="Controllers\TripSheetController.cs" />
     <Compile Include="Controllers\VehicleAllocationController.cs" />
     <Compile Include="Controllers\VehicleDetailController.cs" />
@@ -180,7 +179,6 @@
     <Compile Include="Models\RouteDetailListViewModel.cs" />
     <Compile Include="Models\ShiftDetailViewModel.cs" />
     <Compile Include="Models\ShiftTimingListViewModel.cs" />
-    <Compile Include="Models\VehicalAllocationListViewModel.cs" />
     <Compile Include="Models\TripSheetViewModel.cs" />
     <Compile Include="Models\VehicleAllocationViewModel.cs" />
     <Compile Include="Models\VehicleDetailListViewModel.cs" />
@@ -209,8 +207,6 @@
     <Content Include="Views\RouteDetail\Create.cshtml" />
     <Content Include="Views\ShiftDetail\ShiftDetailsByID.cshtml" />
     <Content Include="Views\BatchDetail\BatchDetailList.cshtml" />
-    <Content Include="Views\VehicleAllocation\Create.cshtml" />
-    <Content Include="Views\VehicleAllocation\List.cshtml" />
     <Content Include="Views\Shared\VehicleAllocationSummery.cshtml" />
     <Content Include="Views\Trip\Create.cshtml" />
     <Content Include="Scripts\bootstrap.min.js.map" />

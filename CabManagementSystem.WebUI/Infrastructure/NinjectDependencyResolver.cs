@@ -30,6 +30,7 @@ namespace CabManagementSystem.WebUI.Infrastructure
             kernel.Bind<IVehicleAllocationRepository>().To<EFVehicleAllocationRepository>();
             //kernel.Bind<IVehicleBillRepository>().To<EFVehicleBillRepository>();
 
+
         }
 
         public object GetService(Type serviceType)
