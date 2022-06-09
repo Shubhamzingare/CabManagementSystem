@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CabManagementSystem.WebUI.Models.VehicleBillViewModel>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Vehicle Bills</title>
+</head>
+<body>
+    @*<button class="fa-solid fa-plus" align="center">@Html.ActionLink("Add New Route", "Create", "RouteDetailsById", new { @class = "fa-solid fa-plus" })</button>*@
+
+    @*<p>
+            @using (Html.BeginForm("RouteDetailsById", "RouteDetail", FormMethod.Get))
+            {
+                <b>Search by Route ID:</b> <input type="text" placeholder="Enter route ID" required name="ID" /> <input type="submit" value="search" />
+            }
+        </p>*@
+    <div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Bill ID</th>
+                    <th>Bill No</th>
+                    <th>Vehicle ID</th>
+                    <th>Total amount</th>
+                    <th>Date of billing</th>
+                    <th>Vender ID</th>
+                    <th>Deductions (amount)</th>
+                    <th>Net amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr>
+                        <td>@p.VehicleBills.billId</td>
+                        <td>@p.VehicleBills.billNum</td>
+                        <td>@p.VehicleBills.vehicleId</td>
+                        <td>@((p.VehicleDetails.ratePerKM*p.TripSheets.distanceTravelled))</td>
+                        <td>@p.VehicleBills.dateOfBilling</td>
+                        <td>@p.VehicleBills.vehicleId</td>
+                        <td>@p.VehicleBills.deductions</td>
+                        <td>@(((p.VehicleDetails.ratePerKM * p.TripSheets.distanceTravelled) - p.VehicleBills.deductions))</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

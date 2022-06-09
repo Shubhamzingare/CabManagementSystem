@@ -182,6 +182,7 @@
     <Compile Include="Models\ShiftTimingListViewModel.cs" />
     <Compile Include="Models\TripSheetViewModel.cs" />
     <Compile Include="Models\VehicleAllocationViewModel.cs" />
+    <Compile Include="Models\VehicleBillViewModel.cs" />
     <Compile Include="Models\VehicleDetailListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -238,6 +239,8 @@
     <Content Include="Views\VehicleAllocation\Create.cshtml" />
     <Content Include="Views\TripSheet\TripSheet.cshtml" />
     <Content Include="Views\TripSheet\Create.cshtml" />
+    <Content Include="Views\VehicleBill\VehicleBillList.cshtml" />
+    <Content Include="Views\VehicleBill\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -247,7 +250,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\VehicleBill\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CabManagementSystem.Domain\CabManagementSystem.Domain.csproj">

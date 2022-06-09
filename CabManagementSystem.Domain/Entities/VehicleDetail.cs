@@ -26,7 +26,7 @@ namespace CabManagementSystem.Domain.Entities
 
 
         [Required(ErrorMessage = "Please enter rate per KM")]
-        public int ratePerKM { get; set; }
+        public decimal ratePerKM { get; set; }
         public int capacity { get; set; }
         public int routeId { get; set; }
     }
