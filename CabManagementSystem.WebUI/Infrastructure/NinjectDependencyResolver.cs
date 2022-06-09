@@ -29,6 +29,7 @@ namespace CabManagementSystem.WebUI.Infrastructure
             kernel.Bind<IUserRepository>().To<EFUserRepository>();
             //kernel.Bind<IVehicleBillRepository>().To<EFVehicleBillRepository>();
 
+
         }
 
         public object GetService(Type serviceType)

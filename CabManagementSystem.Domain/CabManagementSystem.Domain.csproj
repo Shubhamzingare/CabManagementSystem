@@ -102,7 +102,6 @@
     <Compile Include="Abstract\IRouteDetailRepository.cs" />
     <Compile Include="Abstract\IShiftTimingsRepository.cs" />
     <Compile Include="Abstract\ITripSheetRepository.cs" />
-    <Compile Include="Abstract\IVehicleAllocationRepository.cs" />
     <Compile Include="Abstract\IVehicleBillRepository.cs" />
     <Compile Include="Abstract\IVehicleDetailRepository.cs" />
     <Compile Include="Concrete\CabDbContext.cs" />
