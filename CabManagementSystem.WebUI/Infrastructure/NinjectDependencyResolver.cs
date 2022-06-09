@@ -27,7 +27,7 @@ namespace CabManagementSystem.WebUI.Infrastructure
             kernel.Bind<IVehicleDetailRepository>().To<EFVehicleDetailRepository>();
             kernel.Bind<ITripSheetRepository>().To<EFTripSheetRepository>();
             kernel.Bind<IUserRepository>().To<EFUserRepository>();
-            kernel.Bind<IVehicleBillRepository>().To<EFVehicleBillRepository>();
+            //kernel.Bind<IVehicleBillRepository>().To<EFVehicleBillRepository>();
 
         }
 

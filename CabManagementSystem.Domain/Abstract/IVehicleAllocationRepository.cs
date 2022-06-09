@@ -9,6 +9,6 @@ namespace CabManagementSystem.Domain.Abstract
 {
     public interface IVehicleAllocationRepository
     {
-        IEnumerable<VehicleAllocationDetail> VehicleAllocationDetails { get; }
+        //IEnumerable<VehicleAllocationDetail> VehicleAllocationDetails { get; }
     }
 }

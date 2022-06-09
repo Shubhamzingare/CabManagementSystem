@@ -8,9 +8,9 @@ namespace CabManagementSystem.Domain.Abstract
 {
     public interface IVehicleBillRepository
     {
-        IEnumerable<VehicleBill> VehicleBills { get; }
+        //IEnumerable<VehicleBill> VehicleBills { get; }
 
-        void SaveBill(VehicleBill vehicleBill);
+        //void SaveBill(VehicleBill vehicleBill);
 
     }
 }
