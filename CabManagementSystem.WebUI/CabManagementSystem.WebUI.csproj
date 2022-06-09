@@ -167,6 +167,7 @@
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\TripSheetController.cs" />
     <Compile Include="Controllers\VehicleAllocationController.cs" />
+    <Compile Include="Controllers\VehicleBillController.cs" />
     <Compile Include="Controllers\VehicleDetailController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -207,7 +208,6 @@
     <Content Include="Views\RouteDetail\Create.cshtml" />
     <Content Include="Views\ShiftDetail\ShiftDetailsByID.cshtml" />
     <Content Include="Views\BatchDetail\BatchDetailList.cshtml" />
-    <Content Include="Views\Trip\Create.cshtml" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.esm.min.js.map" />
@@ -237,6 +237,7 @@
     <Content Include="Views\Shared\VehicleAllocationSummery.cshtml" />
     <Content Include="Views\VehicleAllocation\Create.cshtml" />
     <Content Include="Views\TripSheet\TripSheet.cshtml" />
+    <Content Include="Views\TripSheet\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

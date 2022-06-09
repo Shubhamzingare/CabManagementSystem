@@ -44,6 +44,33 @@ namespace CabManagementSystem.WebUI.Controllers
 
             return View(Details);
         }
+        [HttpGet]
+        public ViewResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        //[AllowAnonymous]
+        public ActionResult Create(TripSheet tripSheet)
+        {
+            if (ModelState.IsValid)
+            {
+                context.TripSheets.Add(tripSheet);
+                context.SaveChanges();
+                return RedirectToAction("TripSheet");
+            }
+
+            return View(tripSheet);
+        }
+        //[AllowAnonymous]
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                context.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
     }
 }
