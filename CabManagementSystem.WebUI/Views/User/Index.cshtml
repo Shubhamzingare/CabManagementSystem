@@ -32,7 +32,7 @@
 
                                         <div class="form-outline mb-4 dropdown">
                                             <label class="form-label" for="UserType"><b>User Type</b></label>
-                                            @Html.DropDownListFor(model => model.UserType, new SelectList(new[] { "Administrator", "HR-Manager" }), "Select Usertype", new { @class = "form-control dropdown-content" })
+                                            @Html.DropDownListFor(model => model.UserType, new SelectList(new[] { "Administrator", "HR-Manager" }), "Select User type", new { @class = "form-control dropdown-content1" })
                                             @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
                                             <br />
                                         </div>

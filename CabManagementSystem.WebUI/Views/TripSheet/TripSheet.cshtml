@@ -38,7 +38,7 @@
                         <td>@p.TripSheets.vehicleId</td>
                         <td>@p.VehicleDetails.ratePerKM</td>
                         <td>@p.TripSheets.distanceTravelled</td>
-                        <td>@p.VehicleBills.totalAmount</td>
+                        <td>@((p.VehicleDetails.ratePerKM*p.TripSheets.distanceTravelled))</td>
                         <td>@p.TripSheets.remark</td>
                     </tr>
                 }
