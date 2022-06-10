@@ -28,7 +28,7 @@ namespace CabManagementSystem.Domain.Entities
 
         [Required(ErrorMessage = "Please enter Date of Birth")]
         [DataType(DataType.Date)]
-        [EmployeeDOBValidation (ErrorMessage =("Date of birth must be at least 18 years from current date"))]
+        [MinimumAge((18),ErrorMessage =("Date of birth must be at least 18 years from current date")) ]
         public DateTime DOB { get; set; }
 
         public string vehrequired { get; set; }
@@ -53,6 +53,11 @@ namespace CabManagementSystem.Domain.Entities
         [DataType(DataType.Date)]
         public DateTime DOJ { get; set; }
 
+        public enum required
+        {
+            Yes,
+            No
+        }
+
     }
 }
-//

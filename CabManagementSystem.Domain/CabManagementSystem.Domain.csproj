@@ -115,7 +115,7 @@
     <Compile Include="Concrete\EFVehicleAllocationRepository.cs" />
     <Compile Include="Concrete\EFVehicleBillRepository.cs" />
     <Compile Include="Concrete\EFVehicleDetailRepository.cs" />
-    <Compile Include="CustomValidations\EmployeeDOBValidation.cs" />
+    <Compile Include="CustomValidations\MinimumAgeAttribute.cs" />
     <Compile Include="CustomValidations\EmployeeDOJValidation.cs" />
     <Compile Include="Entities\BatchDetail.cs" />
     <Compile Include="Entities\Employee.cs" />

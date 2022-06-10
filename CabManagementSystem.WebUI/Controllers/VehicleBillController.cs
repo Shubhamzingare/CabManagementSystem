@@ -10,18 +10,17 @@ using CabManagementSystem.Domain.Abstract;
 
 namespace CabManagementSystem.WebUI.Controllers
 {
-    public class TripSheetController : Controller
+    public class VehicleBillController : Controller
     {
-
         public CabDbContext context = new CabDbContext();
         private IVehicleBillRepository repository;
 
         public int PageSize = 3;
-        public TripSheetController(IVehicleBillRepository repo)
+        public VehicleBillController(IVehicleBillRepository repo)
         {
             this.repository = repo;
         }
-        public ActionResult TripSheet()
+        public ActionResult VehicleBillList()
         {
             List<VehicleBill> vehicleBills = context.VehicleBills.ToList();
             List<VehicleDetail> vehicleDetails = context.VehicleDetails.ToList();
@@ -33,8 +32,9 @@ namespace CabManagementSystem.WebUI.Controllers
                           from v in table1.ToList()
                           join vb in vehicleBills on t.vehicleId equals vb.vehicleId
                           into table2
-                          from vb in table2.ToList()
-                          select new TripSheetViewModel
+                          from vb in table2.ToList()                          
+                          
+                          select new VehicleBillViewModel
                           {
                               TripSheets = t,
                               VehicleDetails = v,
@@ -51,16 +51,16 @@ namespace CabManagementSystem.WebUI.Controllers
         }
         [HttpPost]
         //[AllowAnonymous]
-        public ActionResult Create(TripSheet tripSheet)
+        public ActionResult Create(VehicleBill vehicleBill)
         {
             if (ModelState.IsValid)
             {
-                context.TripSheets.Add(tripSheet);
+                context.VehicleBills.Add(vehicleBill);
                 context.SaveChanges();
-                return RedirectToAction("TripSheet");
+                return RedirectToAction("VehicleBillList");
             }
 
-            return View(tripSheet);
+            return View(vehicleBill);
         }
         //[AllowAnonymous]
         protected override void Dispose(bool disposing)
