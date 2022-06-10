@@ -6,9 +6,13 @@
 
 <div class="panel panel-default">
     <div class="panel-body">
-        <button class="fa-solid fa-plus" align="center">@Html.ActionLink("Add New Employee", "Create", "Employee", new { @class = "fa-solid fa-plus" })</button>
         <table class="table table-striped table-condensed table-bordered table-hover  w-auto">
             <thead>
+                <tr>
+                    <td colspan="13" align="right">
+                        <button class="fa-solid fa-plus" align="right">@Html.ActionLink("Add New Employee", "Create", "Employee", new { @class = "fa-solid fa-plus" })</button>
+                    </td>
+                </tr>
                 <tr class="table-dark">
                     <th>ID</th>
                     <th>Name</th>
@@ -31,12 +35,14 @@
                 {
                     @Html.Partial("EmployeeSummery", p)
                 }
+                <tr>
+                    <td colspan="13" align="right">
 
+                        @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+                    </td>
+                </tr>
             </tbody>
 
         </table>
-    </div>
-    <div class="pagination justify-content-center">
-        @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
     </div>
 </div>

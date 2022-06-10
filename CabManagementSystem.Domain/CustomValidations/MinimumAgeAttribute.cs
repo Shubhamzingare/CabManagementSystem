@@ -7,21 +7,22 @@ using System.Threading.Tasks;
 using CabManagementSystem.Domain.Entities;
 namespace CabManagementSystem.Domain.CustomValidations
 {
-    public class EmployeeDOBValidation : ValidationAttribute
+    public class MinimumAgeAttribute : ValidationAttribute
     {
         int _minimumAge;
 
-        public EmployeeDOBValidation(int minimumAge=18)
+        public MinimumAgeAttribute(int minimumAge)
         {
             _minimumAge = minimumAge;
+           
         }
-
+        
         public override bool IsValid(object value)
         {
-            DateTime date;
-            if (DateTime.TryParse(value.ToString(), out date))
+            DateTime DOB;
+            if (DateTime.TryParse(value.ToString(), out DOB))
             {
-                return date.AddYears(_minimumAge) < DateTime.Now;
+                return DOB.AddYears(_minimumAge) < DateTime.Now;
             }
 
             return false;
@@ -29,4 +30,3 @@ namespace CabManagementSystem.Domain.CustomValidations
        
     }
 }
-//
