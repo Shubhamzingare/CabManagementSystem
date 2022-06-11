@@ -1,5 +1,12 @@
 ﻿@model CabManagementSystem.Domain.Entities.VehicleDetail
 
+@{
+    ViewBag.Title = "Add New Vehicle";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+
+
 <div class="panel">
     <div class="panel-heading">
         <h3>Create New Vehicle</h3>
@@ -10,7 +17,7 @@
         <div class="form-horizontal " style="width: 800px; margin:50px; align-content:center">
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-          
+
 
             <div class="form-group">
                 <label for="vehicleName"><b>Vehicle Name</b></label>

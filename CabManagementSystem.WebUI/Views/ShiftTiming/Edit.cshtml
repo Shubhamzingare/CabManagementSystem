@@ -1,6 +1,11 @@
 ﻿@using CabManagementSystem.Domain.Entities
 @model CabManagementSystem.Domain.Entities.ShiftTiming
 
+@{
+    ViewBag.Title = "Edit Shifts";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
 <div class="panel">
     <div class="panel-heading">
         <h3>Edit @Model.ShiftName Shift</h3>

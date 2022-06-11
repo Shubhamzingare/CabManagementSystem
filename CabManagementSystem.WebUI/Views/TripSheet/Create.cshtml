@@ -1,4 +1,8 @@
 ﻿@model CabManagementSystem.Domain.Entities.TripSheet
+@{
+    ViewBag.Title = "Create New Sheet";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
 
 
 <!DOCTYPE html>
@@ -12,58 +16,58 @@
     @using (Html.BeginForm())
     {
 
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.tripSheetId, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.tripSheetId, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.tripSheetId, "", new { @class = "text-danger" })
-                </div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.tripSheetId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.tripSheetId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.tripSheetId, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.vehicleAlloId, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.vehicleAlloId, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.vehicleAlloId, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.vehicleAlloId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.vehicleAlloId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.vehicleAlloId, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.vehicleId, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.vehicleId, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.vehicleId, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.vehicleId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.vehicleId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.vehicleId, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.distanceTravelled, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.distanceTravelled, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.distanceTravelled, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.distanceTravelled, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.distanceTravelled, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.distanceTravelled, "", new { @class = "text-danger" })
             </div>
+        </div>
 
 
-                <div class="col-md-10">
-                    <label for="remark">Remark</label>
-                    @Html.TextAreaFor(model => model.remark, new { htmlAttributes = new { @class = "form-control", @Columns = "550px", @Rows = "1000px" } })
-                    @Html.ValidationMessageFor(model => model.remark, "", new { @class = "text-danger" })
-                </div>
-                <div class="form-outline">
-                    <textarea class="form-control" id="textAreaExample1" rows="4"></textarea>
-                    <label class="form-label" for="textAreaExample">Message</label>
-                </div>
+        <div class="col-md-10">
+            <label for="remark">Remark</label>
+            @Html.TextAreaFor(model => model.remark, new { htmlAttributes = new { @class = "form-control", @Columns = "550px", @Rows = "1000px" } })
+            @Html.ValidationMessageFor(model => model.remark, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-outline">
+            <textarea class="form-control" id="textAreaExample1" rows="4"></textarea>
+            <label class="form-label" for="textAreaExample">Message</label>
+        </div>
 
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" /> <input type="reset" value="Cancel" class="btn btn-default" />
-                </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" /> <input type="reset" value="Cancel" class="btn btn-default" />
             </div>
-    <div>
-        @Html.ActionLink("Back to List", "TripSheet")
-    </div>
+        </div>
+        <div>
+            @Html.ActionLink("Back to List", "TripSheet")
+        </div>
     }
 </body>
 </html>

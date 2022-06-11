@@ -1,58 +1,8 @@
 ﻿@model CabManagementSystem.Domain.Entities.BatchDetail
 
-@*<div class="panel">
-        <div class="panel-heading">
-            <h3>Create New Batch</h3>
-        </div>
-
-        @using (Html.BeginForm("Create", "BatchDetail", FormMethod.Post))
-        {
-            <div class="form-horizontal " style="width: 800px; margin:50px; align-content:center">
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-
-                <div class="form-group">
-                    <label for="batchId"><b>Bacth ID</b></label>
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.batchId, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.batchId, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-
-                    <label for="totalEmp"><b>Total Eployees In Batch</b></label>
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.totalEmp, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.totalEmp, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="shiftId"><b>Shift ID</b></label>
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.shiftId, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.shiftId, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="panel-footer">
-                    <input type="submit" value="Save" class="btn btn-success" />
-                    @Html.ActionLink("Cancle And Return to List", "BatchDetailList", null, new { @class = "btn btn-default" })
-                </div>
-
-            </div>
-        }
-    </div>*@
-
-
-
-@*==============================================*@
-
 @{
-    ViewBag.Title = "Login Page";
-
+    ViewBag.Title = "Create New Batch";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
 
@@ -100,18 +50,19 @@
                                             </button>
                                         </div>
 
-                                        <div class="d-flex align-items-center justify-content-center pb-4">
-                                            <p class="mb-0 me-2">Cancle And Return to List</p>
-                                            <button type="button" class="btn btn-outline-danger">
-                                                @Html.ActionLink( "BatchDetailList", null, new { @class = "btn btn-default" })
-                                            </button>
-                                        </div>
+                                        @*<div class="d-flex align-items-center justify-content-center pb-4">
+                                                <p class="mb-0 me-2">Cancle And Return to List</p>
+
+                                                <button type="button" class="btn btn-outline-danger">
+                                                    @Html.ActionLink("BatchDetailList", null, new { @class = "btn btn-default" })
+                                                </button>
+                                            </div>*@
 
                                     </form>
 
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>

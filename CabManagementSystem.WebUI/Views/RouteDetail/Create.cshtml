@@ -1,12 +1,18 @@
 ﻿@model CabManagementSystem.Domain.Entities.RouteDetail
 @using CabManagementSystem.Domain.Entities
 
+@{
+    ViewBag.Title = "Add New Route";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+
 <div class="panel">
     <div class="panel-heading">
         <h3>Create New Route</h3>
     </div>
 
-    @using (Html.BeginForm("Create", "RouteDetail",FormMethod.Post))
+    @using (Html.BeginForm("Create", "RouteDetail", FormMethod.Post))
     {
         <div class="form-horizontal" style="width: 800px; margin:50px; align-content:center">
             <hr />

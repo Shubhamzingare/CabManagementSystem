@@ -181,6 +181,7 @@
     <Compile Include="Models\EmployeeListViewModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\RouteDetailListViewModel.cs" />
+    <Compile Include="Models\RouteDetailViewModel.cs" />
     <Compile Include="Models\ShiftDetailViewModel.cs" />
     <Compile Include="Models\ShiftTimingListViewModel.cs" />
     <Compile Include="Models\TripSheetViewModel.cs" />
@@ -246,6 +247,8 @@
     <Content Include="Views\VehicleBill\VehicleBillList.cshtml" />
     <Content Include="Views\VehicleBill\Create.cshtml" />
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
+    <Content Include="Views\RouteDetail\RouteDetailList.cshtml" />
+    <Content Include="Views\Shared\RouteDetailSummery.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

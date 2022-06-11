@@ -11,19 +11,40 @@ using CabManagementSystem.Domain.Abstract;
 
 
 
+
 namespace CabManagementSystem.WebUI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class RouteDetailController : Controller
     {
         private IRouteDetailRepository repository;
 
+
+        public int PageSize = 2;
         public RouteDetailController(IRouteDetailRepository repo)
         {
             this.repository = repo;
         }
 
         private CabDbContext db = new CabDbContext();
+
+        public ViewResult RouteDetailList(int page = 1)
+        {
+           RouteDetailViewModel  model = new RouteDetailViewModel
+           {
+                RouteDetails = repository.RouteDetails
+                 .OrderBy(p => p.routeId)
+                          .Skip((page - 1) * PageSize)
+                          .Take(PageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalItems = repository.RouteDetails.Count()
+                }
+            };
+            return View(model);
+        }
 
         [AllowAnonymous]
         public ViewResult RouteDetailsById()

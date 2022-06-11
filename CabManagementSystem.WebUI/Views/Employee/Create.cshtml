@@ -1,6 +1,10 @@
 ﻿@model CabManagementSystem.Domain.Entities.Employee
 
 
+@{
+   
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
 
 
 
@@ -8,19 +12,17 @@
 @using (Html.BeginForm("Create", "Employee", FormMethod.Post))
 {
 
-    <section class="h-100 gradient-form" style="background-color: #eee;">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-xl-10">
-                    <div class="card rounded-3 text-black">
+                   
                         <div class="row g-0">
                             <div class="col-lg-6">
                                 <div class="card-body p-md-5 mx-md-4">
-                                   
 
-                                    <form>
+                                    <form style="align-self:center">
                                         <h3>Add New Employee</h3>
                                         <hr />
+                                       
                                         @*=================*@
 
                                         <div class="form-outline mb-4">
@@ -62,7 +64,7 @@
 
                                         <div class="form-outline mb-4">
                                             <label for="vehrequired"><b>Vehicle Required [Yes/No]</b></label><br />
-                                            @Html.DropDownListFor(model => model.vehrequired, new SelectList(new[] { "Yes", "No" }), "Select Yes/No", new { @class = "form-control dropdown-content" })
+                                            @Html.DropDownListFor(model => model.vehrequired, new SelectList(new[] { "Yes", "No" }), "Select Yes/No", new { @class = "form-control dropdown-content fa" })
                                             @Html.ValidationMessageFor(model => model.vehrequired, "", new { @class = "text-danger" })
                                         </div>
 
@@ -108,12 +110,10 @@
 
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        
                 </div>
             </div>
         </div>
-    </section>
 }
 
 

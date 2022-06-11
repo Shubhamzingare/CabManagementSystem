@@ -1,5 +1,10 @@
 ﻿@model IEnumerable<CabManagementSystem.WebUI.Models.ShiftDetailViewModel>
 
+@{
+    ViewBag.Title = "Search Shift Details";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
 <!DOCTYPE html>
 
 <html>
@@ -31,7 +36,7 @@
                     <tr>
                         <td colspan="4" align="center" style="color:red">No Rows Found</td>
                     </tr>
-                    }
+                }
                 @foreach (var p in Model)
                 {
                     <tr>

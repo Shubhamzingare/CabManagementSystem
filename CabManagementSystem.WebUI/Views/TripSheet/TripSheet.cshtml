@@ -1,5 +1,11 @@
 ﻿@model IEnumerable<CabManagementSystem.WebUI.Models.TripSheetViewModel>
 
+
+@{
+    ViewBag.Title = "Trip Sheet Details";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
 <!DOCTYPE html>
 
 <html>
@@ -11,15 +17,15 @@
     @*<button class="fa-solid fa-plus" align="center">@Html.ActionLink("Add New Route", "Create", "RouteDetailsById", new { @class = "fa-solid fa-plus" })</button>*@
 
     @*<p>
-        @using (Html.BeginForm("RouteDetailsById", "RouteDetail", FormMethod.Get))
-        {
-            <b>Search by Route ID:</b> <input type="text" placeholder="Enter route ID" required name="ID" /> <input type="submit" value="search" />
-        }
-    </p>*@
+            @using (Html.BeginForm("RouteDetailsById", "RouteDetail", FormMethod.Get))
+            {
+                <b>Search by Route ID:</b> <input type="text" placeholder="Enter route ID" required name="ID" /> <input type="submit" value="search" />
+            }
+        </p>*@
     <div>
         <table class="table table-bordered table-striped">
             <thead>
-                <tr >
+                <tr>
                     <th>Trip Sheet ID</th>
                     <th>Vehicle Allocation ID</th>
                     <th>Vehicle ID</th>

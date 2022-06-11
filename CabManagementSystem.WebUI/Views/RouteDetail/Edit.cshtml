@@ -1,6 +1,12 @@
 ﻿@model CabManagementSystem.Domain.Entities.RouteDetail
 @using CabManagementSystem.Domain.Entities
 
+@{
+    ViewBag.Title = "Edit Route Details";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+
 <div class="panel">
     <div class="panel-heading">
         <h3>Edit @Model.routeId Route</h3>
@@ -11,7 +17,7 @@
         <div class="form-horizontal " style="width: 800px; margin:50px; align-content:center">
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-         
+
             <div class="form-group">
                 <label for="routeId"><b>Route ID</b></label>
                 <div class="col-md-10">
