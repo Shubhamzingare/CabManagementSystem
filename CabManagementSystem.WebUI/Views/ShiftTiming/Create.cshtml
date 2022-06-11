@@ -23,10 +23,10 @@
 
             <div class="form-group">
                 <label for="ShiftName"><b>Shift Name</b></label>
-                <div class="col-md-10">
+                <div class="col-md-10" >
                     @Html.DropDownListFor(m => m.ShiftName,
                                 new SelectList(Enum.GetValues(typeof(Shifts))),
-                                "Select Shift", new { @class = "" })
+                                "Select Shift", new { @class = "form-control dropdown-content fa" })
                     @Html.ValidationMessageFor(model => model.ShiftName, "", new { @class = "text-danger" })
                 </div>
             </div>

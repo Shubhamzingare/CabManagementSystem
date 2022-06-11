@@ -12,7 +12,7 @@
 {
     @Html.Raw(ViewBag.ErrorMessage)
 
-    <section class="h-100 gradient-form" style="background-color: #eee;">
+    <section class="h-200 gradient-form" style="background-color: #eee;">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-10">
@@ -32,7 +32,7 @@
 
                                         <div class="form-outline mb-4 dropdown">
                                             <label class="form-label" for="UserType"><b>User Type</b></label>
-                                            @Html.DropDownListFor(model => model.UserType, new SelectList(new[] { "Administrator", "HR-Manager" }), "Select User type", new { @class = "form-control  dropdown-content" })
+                                            @Html.DropDownListFor(model => model.UserType, new SelectList(new[] { "Administrator", "HR-Manager" }), "Select User type", new { @class = "form-control  dropdown-content fa" })
                                             @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
                                             <br />
                                         </div>
