@@ -1,11 +1,10 @@
 ﻿<!DOCTYPE html>
-<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
     <link rel="stylesheet" href="style.css">
-    <!-- Boxiocns CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="~/Content/dashboard.css" rel="stylesheet" />
@@ -20,22 +19,24 @@
             margin: 50px;
             margin-bottom: 200px;
         }
-        
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bxl-c-plus-plus'></i>
+            <i class="fa-solid fa-c"></i>
             <span class="logo_name">Cab Management</span>
         </div>
         <ul class="nav-links">
+            
             <li>
-                <a href="#">
-                    <i class='bx bx-grid-alt'></i>
-                    <span class="link_name">Dashboard</span>
-                </a>
+                <div class="iocn-link">
+                    <a href="~/Dashboard/UserDashboard">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="link_name">Dashboard</span>
+                    </a>
+                </div>
             </li>
 
             @*Employee*@
@@ -43,7 +44,7 @@
             <li>
                 <div class="iocn-link">
                     <a href="#">
-                        <i class='bx bx-user'></i>
+                        <i class='fas fa-user'></i>
                         <span class="link_name">Employees</span>
                     </a>
                     <i class='bx bxs-chevron-down arrow'></i>
@@ -60,7 +61,7 @@
             <li>
                 <div class="iocn-link">
                     <a href="#">
-                        <i class='bx bx-time-five'></i>
+                        <i class='fas fa-clock'></i>
                         <span class="link_name">Shifts</span>
                     </a>
                     <i class='bx bxs-chevron-down arrow'></i>
@@ -78,7 +79,7 @@
             <li>
                 <div class="iocn-link">
                     <a href="#">
-                        <i class='bx bx-group'></i>
+                        <i class='fas fa-users'></i>
                         <span class="link_name">Batches</span>
                     </a>
                     <i class='bx bxs-chevron-down arrow'></i>
@@ -95,10 +96,9 @@
             <li>
                 <div class="iocn-link">
                     <a href="#">
-                        <i class='bx bx-time-five'></i>
+                        <i class='fas fa-route'></i>
                         <span class="link_name">Routes</span>
-                    </a>
-                    <i class='bx bxs-chevron-down arrow'></i>
+                    </a><i class='bx bxs-chevron-down arrow'></i>
                 </div>
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">Routes</a></li>
@@ -113,7 +113,7 @@
             <li>
                 <div class="iocn-link">
                     <a href="#">
-                        <i class='bx bx-time-five'></i>
+                        <i class='fa fa-cab'></i>
                         <span class="link_name">Vehicles</span>
                     </a>
                     <i class='bx bxs-chevron-down arrow'></i>
@@ -130,7 +130,7 @@
             <li>
                 <div class="iocn-link">
                     <a href="#">
-                        <i class='bx bx-time-five'></i>
+                        <i class="fa-solid fa-car-side"></i>
                         <span class="link_name">Vehicle Allocation</span>
                     </a>
                     <i class='bx bxs-chevron-down arrow'></i>
@@ -148,7 +148,7 @@
             <li>
                 <div class="iocn-link">
                     <a href="#">
-                        <i class='bx bx-time-five'></i>
+                        <i class="fa-solid fa-map-location-dot"></i>
                         <span class="link_name">Trip Sheet</span>
                     </a>
                     <i class='bx bxs-chevron-down arrow'></i>
@@ -165,7 +165,7 @@
             <li>
                 <div class="iocn-link">
                     <a href="#">
-                        <i class='bx bx-time-five'></i>
+                        <i class="fa-solid fa-money-bills"></i>
                         <span class="link_name">Vehicle Bill</span>
                     </a>
                     <i class='bx bxs-chevron-down arrow'></i>
@@ -211,8 +211,8 @@
                         <!--<img src="image/profile.jpg" alt="profileImg">-->
                     </div>
                     <div class="name-job">
-                        <div class="profile_name">Prem Shahi</div>
-                        <div class="job">Web Desginer</div>
+                        <div class="profile_name">@Html.ActionLink("Logout", "Logout", "Dashboard")</div>
+                        <div class="job">@Session["UserName"]</div>
                     </div>
                     <i class='bx bx-log-out'></i>
                 </div>
@@ -222,10 +222,10 @@
     <section class="home-section">
         <div class="home-content">
             <i class='bx bx-menu'></i>
-            <span class="text">Drop Down Sidebar</span>
+            <span class="text">Welcome @Session["UserName"]</span>
 
         </div>
-        <div>
+        <div class="container" style="margin:0.5px">
             @RenderBody();
         </div>
     </section>
