@@ -53,7 +53,7 @@ ul {
 }
 
 .footer-pattern img {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     height: 330px;
@@ -121,7 +121,7 @@ ul {
 
     .footer-widget-heading h3::before {
         content: "";
-        position: relative;
+        position: absolute;
         left: 0;
         bottom: -15px;
         height: 2px;
@@ -159,7 +159,7 @@ ul {
     }
 
     .subscribe-form button {
-        position: relative;
+        position: absolute;
         right: 0;
         background: #ff5e14;
         padding: 13px 20px;
@@ -201,7 +201,6 @@ ul {
         font-size: 14px;
         color: #878787;
     }
-
 
 /*===================animated backround of all pages=====================*/
 
