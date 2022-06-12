@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://icon-sets.iconify.design/bxl/c-plus-plus/" />
     <link href="~/Content/dashboard.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-grid.rtl.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-grid.min.css" rel="stylesheet" />
@@ -31,15 +32,18 @@
             box-shadow: 10px 10px 20px #888888;
             table-layout: fixed;
         }
-        tr{
-            border:none;
+
+        tr {
+            border: none;
         }
+
         td:hover {
             color: transparent;
             text-shadow: 0 0 3px #aaa;
             color: #7b71eb;
             text-shadow: 0 1px 0 #fff;
         }
+
         thead {
             background-color: rgba(255, 255, 255, 0.3)
         }
@@ -50,9 +54,10 @@
             margin-top: 0px;
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
+
         th {
             padding: 20px 15px;
-            text-align:center;
+            text-align: center;
             font-weight: 500;
             font-size: 15px;
             color: #fff;
@@ -74,10 +79,15 @@
             border: 10px solid white;
         }
 
+        /*============================================*/
         d1 {
             align-items: center
         }
+        /*======================================*/
 
+        footer {
+            position: relative;
+        }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -88,8 +98,11 @@
 
     <div class="sidebar close">
         <div class="logo-details">
-            <i class="fa-solid fa-c"></i>
-            <span class="logo_name"> </span>
+
+            
+                <i class="bx bxl-c-plus-plus"></i>
+            <span class="logo_name">Cab Management</span>
+
         </div>
         <ul class="nav-links">
 
@@ -319,6 +332,139 @@
             @RenderBody();
         </div>
     </section>
+
+    <footer class="footer-section" style="margin-top:20%">
+        <div class="container">
+            <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                <span>
+                                    <b>
+                                        Pune
+                                        Zensar Technologies Ltd (Corporate Headquarters)
+                                    </b>
+                                    Plot #4, MIDC, Off Nagar Road, Zensar
+                                    Knowledge Park, Kharadi, Pune 411
+                                    014,Maharashtra, India.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>Call us</h4>
+                                <span>
+                                    <b>Phone:</b>
+                                    020-66074000,
+                                    020-66057500<br />
+                                    <b>Fax:</b>
+                                    +91-20-66074444
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="far fa-envelope-open"></i>
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span>mail@info.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-content pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget">
+                            <div class="logo-details">
+                                <span class="logo_name" style="color:white; font-size:130%">Cab Management</span><br />
+                            </div>
+                            <div class="footer-text">
+                                <p>
+                                    Experience best-in-class corporate transportation services
+                                    with Office Ride Enterprise. Our cab service provides a safe
+                                    & reliable solution to transport employees to and from work.
+                                    We help your employees get to work comfortably and seamlessly.
+                                </p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span>Follow us</span>
+                                <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Useful Links</h3>
+                            </div>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">about</a></li>
+                                <li><a href="#">services</a></li>
+                                <li><a href="#">portfolio</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Our Services</a></li>
+                                <li><a href="#">Expert Team</a></li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Latest News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Subscribe</h3>
+                            </div>
+                            <div class="footer-text mb-25">
+                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                            </div>
+                            <div class="subscribe-form">
+                                <form action="#">
+                                    <input type="text" placeholder="Email Address">
+                                    <button><i class="fab fa-telegram-plane"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>© 2003-2022 Zensar Technologies Ltd. CIN:L72200PN1963PLC012621. All rights reserved</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Policy</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script>
         let arrow = document.querySelectorAll(".arrow");
         for (var i = 0; i < arrow.length; i++) {
