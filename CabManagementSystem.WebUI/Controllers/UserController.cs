@@ -44,7 +44,7 @@ namespace CabManagementSystem.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(Domain.Entities.User user)
+        public ActionResult Register(User user)
         {
             if (ModelState.IsValid == true)
             {
