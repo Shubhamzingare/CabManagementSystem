@@ -19,7 +19,7 @@ namespace CabManagementSystem.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(Domain.Entities.User user)
+        public ActionResult Index(User user)
         {
             var userData = context.Users.Where(model => model.UserType == user.UserType &&
                                         model.UserName == user.UserName &&
