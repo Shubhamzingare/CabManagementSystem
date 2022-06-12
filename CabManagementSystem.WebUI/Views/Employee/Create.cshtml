@@ -2,7 +2,7 @@
 
 
 @{
-   
+
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
@@ -10,111 +10,115 @@
 
 
 @using (Html.BeginForm("Create", "Employee", FormMethod.Post))
+
 {
+    @Html.Raw(ViewBag.ErrorMessage)
+   
+    <div class="container py-5 h-100">
 
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                   
-                        <div class="row g-0">
-                            <div class="col-lg-6">
-                                <div class="card-body p-md-5 mx-md-4">
+               <div class="row g-0" >
+                        <span id="d1" style="margin-top:20px; font-size:130%">
 
-                                    <form style="align-self:center">
-                                        <h3>Add New Employee</h3>
-                                        <hr />
-                                       
-                                        @*=================*@
+                            <b style="margin-left:38%;">Add New Employee</b>
 
-                                        <div class="form-outline mb-4">
-                                            <label for="empId"><b>Employee ID</b></label><br />
-                                            @Html.TextBoxFor(m => m.empId, new { @class = "form-input", @placeholder = " Enter Employee ID " })
-                                            @Html.ValidationMessageFor(model => model.empId, "", new { @class = "text-danger" })
-                                        </div>
+                        </span>
+                        <hr />
+                        <div class="col-lg-6">
 
-                                        <div class="form-outline mb-4">
-                                            <label for="empName"><b>Employee Name</b></label><br />
-                                            @Html.TextBoxFor(m => m.empName, new { @class = "form-input", @placeholder = " Enter Name " })
-                                            @Html.ValidationMessageFor(model => model.empId, "", new { @class = "text-danger" })
-                                        </div>
+                            <div class="card-body p-md-5 mx-md-4">
 
-                                        <div class="form-outline mb-4">
-                                            <label for="perAddress"><b>Permanent Address</b></label><br />
-                                            @Html.TextBoxFor(m => m.perAddress, new { @class = "form-input", @placeholder = " Enter Permanent Address " })
-                                            @Html.ValidationMessageFor(model => model.perAddress, "", new { @class = "text-danger" })
-                                        </div>
+                                <div class="form-outline mb-4">
+                                    <label for="empId"><b>Employee ID</b></label><br />
+                                    @Html.TextBoxFor(m => m.empId, new { @class = "form-input", @placeholder = " Enter Employee ID " })
+                                    @Html.ValidationMessageFor(model => model.empId, "", new {  @style= "color:white"})
+                                </div>
 
-                                        <div class="form-outline mb-4">
-                                            <label for="comAddress"><b>Communication Address</b></label><br />
-                                            @Html.TextBoxFor(m => m.comAddress, new { @class = "form-input", @placeholder = " Enter Communication Address " })
-                                            @Html.ValidationMessageFor(model => model.comAddress, "", new { @class = "text-danger" })
-                                        </div>
+                                <div class="form-outline mb-4">
+                                    <label for="empName"><b>Employee Name</b></label><br />
+                                    @Html.TextBoxFor(m => m.empName, new { @class = "form-input", @placeholder = " Enter Name " })
+                                    @Html.ValidationMessageFor(model => model.empId, "", new { @style = "color:white" })
+                                </div>
 
-                                        <div class="form-outline mb-4">
-                                            <label for="qualification"><b>Qualifications</b></label><br />
-                                            @Html.TextBoxFor(m => m.qualification, new { @class = "form-input", @placeholder = " Enter Qualifications " })
-                                            @Html.ValidationMessageFor(model => model.qualification, "", new { @class = "text-danger" })
-                                        </div>
+                                <div class="form-outline mb-4">
+                                    <label for="perAddress"><b>Permanent Address</b></label><br />
+                                    @Html.TextBoxFor(m => m.perAddress, new { @class = "form-input", @placeholder = " Enter Permanent Address " })
+                                    @Html.ValidationMessageFor(model => model.perAddress, "", new { @style = "color:white" })
+                                </div>
 
-                                        <div class="form-outline mb-4">
-                                            <label for="DOB"><b>Date Of Birth</b></label><br />
-                                            @Html.EditorFor(m => m.DOB, new { @class = "form-input" })
-                                            @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
-                                        </div>
+                                <div class="form-outline mb-4">
+                                    <label for="comAddress"><b>Communication Address</b></label><br />
+                                    @Html.TextBoxFor(m => m.comAddress, new { @class = "form-input", @placeholder = " Enter Communication Address " })
+                                    @Html.ValidationMessageFor(model => model.comAddress, "", new { @style = "color:white" })
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label for="DOB"><b>Date Of Birth</b></label><br />
+                                    @Html.EditorFor(m => m.DOB, new { @class = "form-input" })
+                                    @Html.ValidationMessageFor(model => model.DOB, "", new { @style = "color:white" })
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label for="vehrequired"><b>Vehicle Required [Yes/No]</b></label><br />
+                                    @Html.DropDownListFor(model => model.vehrequired, new SelectList(new[] { "Yes", "No" }), "Select Yes/No", new { @class = "form-control dropdown-content fa" })
+                                    @Html.ValidationMessageFor(model => model.vehrequired, "", new { @style = "color:white" })
+                                </div>
 
 
-                                        <div class="form-outline mb-4">
-                                            <label for="vehrequired"><b>Vehicle Required [Yes/No]</b></label><br />
-                                            @Html.DropDownListFor(model => model.vehrequired, new SelectList(new[] { "Yes", "No" }), "Select Yes/No", new { @class = "form-control dropdown-content fa" })
-                                            @Html.ValidationMessageFor(model => model.vehrequired, "", new { @class = "text-danger" })
-                                        </div>
+                            </div>
+                        </div>
 
-                                        <div class="form-outline mb-4">
-                                            <label for="gender"><b>Gender</b></label><br />
-                                            @Html.TextBoxFor(m => m.gender, new { @class = "form-input", @placeholder = " Enter Gender " })
-                                            @Html.ValidationMessageFor(model => model.gender, "", new { @class = "text-danger" })
-                                        </div>
+                        @*============================*@
 
-                                        <div class="form-outline mb-4">
-                                            <label for="phoneNo"><b>Phone Number</b></label><br />
-                                            @Html.TextBoxFor(m => m.phoneNo, new { @class = "form-input", @placeholder = " Enter Phone Number " })
-                                            @Html.ValidationMessageFor(model => model.phoneNo, "", new { @class = "text-danger" })
-                                        </div>
 
-                                        <div class="form-outline mb-4">
-                                            <label for="designation"><b>Designation</b></label><br />
-                                            @Html.TextBoxFor(m => m.designation, new { @class = "form-input", @placeholder = " Enter Designation " })
-                                            @Html.ValidationMessageFor(model => model.designation, "", new { @class = "text-danger" })
-                                        </div>
+                        <div class="col-lg-6">
+                            <div class="card-body p-md-5 mx-md-4">
 
-                                        <div class="form-outline mb-4">
-                                            <label class="form-label" for="department"><b>Department</b></label><br />
-                                            @Html.TextBoxFor(m => m.department, new { @class = "form-input", @placeholder = " Enter Department" })
-                                            @Html.ValidationMessageFor(model => model.department, "", new { @class = "text-danger" })
-                                        </div>
 
-                                        <div class="form-outline mb-4">
-                                            <label class="form-label" for="DOJ"><b>Date of Joining</b></label><br />
-                                            @Html.EditorFor(m => m.DOJ, new { @class = "form-input" })
-                                            @Html.ValidationMessageFor(model => model.DOJ, "", new { @class = "text-danger" })
-                                        </div>
-                                        <div class="text-center pt-1 mb-5 pb-1">
-                                            <button class="btn btn-primary button-29 btn-block fa-lg gradient-custom-2 mb-3" type="submit">
-                                                Save
-                                            </button>
-                                            <button class="btn btn-dark button-29 btn-block fa-lg mb-3" type="reset">
-                                                Cancel
-                                            </button>
-                                        </div>
+                                <div class="form-outline mb-4">
+                                    <label for="gender"><b>Gender</b></label><br />
+                                    @Html.TextBoxFor(m => m.gender, new { @class = "form-input", @placeholder = " Enter Gender " })
+                                    @Html.ValidationMessageFor(model => model.gender, "", new { @style = "color:white" })
+                                </div>
 
-                                    </form>
+                                <div class="form-outline mb-4">
+                                    <label for="phoneNo"><b>Phone Number</b></label><br />
+                                    @Html.TextBoxFor(m => m.phoneNo, new { @class = "form-input", @placeholder = " Enter Phone Number " })
+                                    @Html.ValidationMessageFor(model => model.phoneNo, "", new { @style = "color:white" })
+                                </div>
 
+                                <div class="form-outline mb-4">
+                                    <label for="designation"><b>Designation</b></label><br />
+                                    @Html.TextBoxFor(m => m.designation, new { @class = "form-input", @placeholder = " Enter Designation " })
+                                    @Html.ValidationMessageFor(model => model.designation, "", new { @style = "color:white" })
+                                </div>
+
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="department"><b>Department</b></label><br />
+                                    @Html.TextBoxFor(m => m.department, new { @class = "form-input", @placeholder = " Enter Department" })
+                                    @Html.ValidationMessageFor(model => model.department, "", new { @style = "color:white",})
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="DOJ"><b>Date of Joining</b></label><br />
+                                    @Html.EditorFor(m => m.DOJ, new { @class = "form-input" })
+                                    @Html.ValidationMessageFor(model => model.DOJ, "", new { @style = "color:white; weight:bold" })
                                 </div>
                             </div>
-                        
+                        </div>
+
+
+
+                    </div>
+                    <div class="text-center pt-1 mb-5 pb-1">
+                        <button class="btn btn-primary button-29 btn-block fa-lg gradient-custom-2 mb-3" type="submit">
+                            Save
+                        </button>
+                        &nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-dark button-29 btn-block fa-lg mb-3" type="reset">
+                            Cancel
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </div>
+           
 }
-
-
-
