@@ -1,1 +1,1 @@
-﻿
+﻿// https://manuel.pinto.dev
