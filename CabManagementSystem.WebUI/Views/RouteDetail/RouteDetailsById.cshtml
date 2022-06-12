@@ -31,7 +31,6 @@
                     <th>Source location</th>
                     <th>Destination location</th>
                     <th>Batch ID</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,9 +49,6 @@
                         <td>@p.RouteDetails.sourceLOC</td>
                         <td>@p.RouteDetails.destLOC</td>
                         <td>@p.RouteDetails.batchId</td>
-                        <td style="width:40px">
-                            @Html.ActionLink("Edit", "Edit", new { id = @p.RouteDetails.empId }) |
-                        </td>
                     </tr>
                 }
             </tbody>

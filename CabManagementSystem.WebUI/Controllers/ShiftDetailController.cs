@@ -19,6 +19,7 @@ namespace CabManagementSystem.WebUI.Controllers
         public ActionResult ShiftDetailsByID()
         {
             int id = Convert.ToInt32(Request["searchID"]);
+            
             List<ShiftTiming> shiftTimings = context.ShiftTimings.ToList();
             List<RouteDetail> routeDetails = context.RouteDetails.ToList();
             List<BatchDetail> batchDetails = context.BatchDetails.ToList();

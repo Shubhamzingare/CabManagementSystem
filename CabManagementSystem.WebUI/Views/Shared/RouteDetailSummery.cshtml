@@ -7,4 +7,8 @@
     <td>@Model.sourceLOC</td>
     <td>@Model.destLOC</td>
     <td>@Model.batchId</td>
+    <td style="width:40px">
+        @Html.ActionLink("Edit", "Edit", new { id = @Model.empId })
+    </td>
+
 </tr>
