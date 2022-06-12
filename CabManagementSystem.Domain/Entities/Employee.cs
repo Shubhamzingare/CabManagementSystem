@@ -59,6 +59,11 @@ namespace CabManagementSystem.Domain.Entities
             Yes,
             No
         }
-
+        public enum identity
+        {
+            Male,
+            Female,
+            Others
+        }
     }
 }

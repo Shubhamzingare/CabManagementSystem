@@ -76,7 +76,7 @@
 
                                 <div class="form-outline mb-4">
                                     <label for="gender"><b>Gender</b></label><br />
-                                    @Html.TextBoxFor(m => m.gender, new { @class = "form-input", @placeholder = " Enter Gender " })
+                                    @Html.DropDownListFor(model => model.gender, new SelectList(new[] { "Male", "Female","Other" }), "Select Gender", new { @class = "form-control dropdown-content fa" })
                                     @Html.ValidationMessageFor(model => model.gender, "", new { @style = "color:white" })
                                 </div>
 
