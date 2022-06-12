@@ -161,6 +161,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BatchDetailController.cs" />
+    <Compile Include="Controllers\ChangePwdController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\RouteDetailController.cs" />
@@ -185,6 +186,7 @@
     <Compile Include="Models\ShiftDetailViewModel.cs" />
     <Compile Include="Models\ShiftTimingListViewModel.cs" />
     <Compile Include="Models\TripSheetViewModel.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Models\VehicleAllocationViewModel.cs" />
     <Compile Include="Models\VehicleBillViewModel.cs" />
     <Compile Include="Models\VehicleDetailListViewModel.cs" />
@@ -242,13 +244,13 @@
     <Content Include="Views\Shared\VehicleAllocationSummery.cshtml" />
     <Content Include="Views\VehicleAllocation\Create.cshtml" />
     <Content Include="Views\TripSheet\TripSheet.cshtml" />
-    <Content Include="Views\User\ChangePassword.cshtml" />
     <Content Include="Views\TripSheet\Create.cshtml" />
     <Content Include="Views\VehicleBill\VehicleBillList.cshtml" />
     <Content Include="Views\VehicleBill\Create.cshtml" />
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Views\RouteDetail\RouteDetailList.cshtml" />
     <Content Include="Views\Shared\RouteDetailSummery.cshtml" />
+    <Content Include="Views\ChangePwd\ChangePassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

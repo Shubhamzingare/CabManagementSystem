@@ -49,5 +49,7 @@ namespace CabManagementSystem.Domain.Entities
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Password and Compare Password fields are not matching, enter again")]
         public string ConfirmPassword { get; set; }
+
     }
+
 }

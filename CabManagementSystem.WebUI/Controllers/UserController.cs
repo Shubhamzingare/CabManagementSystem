@@ -19,7 +19,7 @@ namespace CabManagementSystem.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(User user)
+        public ActionResult Index(Domain.Entities.User user)
         {
             var userData = context.Users.Where(model => model.UserType == user.UserType &&
                                         model.UserName == user.UserName &&
@@ -44,7 +44,7 @@ namespace CabManagementSystem.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(User user)
+        public ActionResult Register(Domain.Entities.User user)
         {
             if (ModelState.IsValid == true)
             {
@@ -65,53 +65,5 @@ namespace CabManagementSystem.WebUI.Controllers
         }
 
 
-        public ActionResult ChangePassword()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult ChangePassword(ChangePasswordViewModel model)
-        {
-            //User user = null;
-            //    var uname = Session["UserName"];
-            //    user = context.Users.Find(uname);
-            //    if (user.Password == model.CurrentPassword)
-            //    {
-            //        user.Password = model.CurrentPassword;
-            //        context.Entry(user).State = EntityState.Modified;
-            //        context.SaveChanges();
-            //        ViewBag.InsertMessage = "Your Password is updated successfully";
-            //    }
-            //    else
-            //    {
-            //        ViewBag.InsertMessage = "Invalid Current Password";
-            //    }
-
-            //return View();
-
-
-            try
-            {
-
-                var data = context.Users.Where( u => u.Password == model.ConfirmNewPassword).FirstOrDefault();
-                if(data != null)
-                {
-                    data.Password = model.NewPassword;
-                    context.SaveChanges();
-
-                    TempData["msg"] = "Password updated successfully";
-                }
-                else
-                {
-                    TempData["msg"] = "Password not updated";
-                }
-            }
-            catch (Exception ex)
-            {
-                TempData["msg"] = ex;
-            }
-            return View();
-        }
     }
 }
