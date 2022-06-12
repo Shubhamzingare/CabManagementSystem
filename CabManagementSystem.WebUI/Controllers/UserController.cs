@@ -29,7 +29,7 @@ namespace CabManagementSystem.WebUI.Controllers
                 Session["UserType"] = user.UserType;
                 Session["UserName"] = user.UserName.ToString();
                 TempData["LoginSuccessMessage"] = "<script>alert('Login Succesful!')</script>";
-                return RedirectToAction("UserDashboard", "Dashboard");
+                return RedirectToAction("ChangePassword", "ChangePwd");
             }
             else
             {
