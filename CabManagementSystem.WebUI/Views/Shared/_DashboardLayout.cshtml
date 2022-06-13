@@ -3,6 +3,7 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -298,8 +299,11 @@
             </li>
         </ul>
     </div>
+
+
+
     
-    <section class="home-section">
+    <section class="home-section" style="color:white">
         <div>
             <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2a6668">
                 <div class="container-fluid">
@@ -314,9 +318,9 @@
                                 <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                                     <i class="bx bx-user-circle"></i>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                                    <li><a class="dropdown-item" href="~/ChangePwd/ChangePassword">Change Password</a></li>
+                                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown" style="background-color: #2a6668">
+                                    <li><a class="dropdown-item" href="#" font-color="white">Profile</a></li>
+                                    <li><a class="dropdown-item" href="~/Password/ChangePassword">Change Password</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="~/Dashboard/Logout">Logout</a></li>
                                 </ul>
@@ -326,17 +330,20 @@
                 </div>
             </nav>
         </div>
-        <div class="home-content">
+        <div class="home-content" >
+
             <i class='bx bx-menu'></i>
-            <span class="text">Welcome @Session["UserName"]</span>
+            <span class="text" style="color:white">Welcome @Session["UserName"]</span>
 
         </div>
-        <div class="container" style="margin:0.5px">
+
+        <div class="container" style="margin:0.5px;margin-right:4cm">
             @RenderBody()
         </div>
     </section>
 
-    <footer class="footer-section col-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:50%">
+    <footer class="footer-section col-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 30%; background-color: #2a6668;color:white">
+
 
         <div class="container">
             <div class="footer-cta pt-5 pb-5">
