@@ -187,7 +187,6 @@
     <Compile Include="Models\RouteDetailViewModel.cs" />
     <Compile Include="Models\ShiftDetailViewModel.cs" />
     <Compile Include="Models\ShiftTimingListViewModel.cs" />
-    <Compile Include="Models\TripSheetPagingViewModel.cs" />
     <Compile Include="Models\TripSheetViewModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\VehicleAllocationViewModel.cs" />
