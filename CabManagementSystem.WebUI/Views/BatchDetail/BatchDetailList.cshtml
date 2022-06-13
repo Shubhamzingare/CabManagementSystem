@@ -6,34 +6,46 @@
 }
 
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Search Shift Details By Shift ID</title>
-</head>
-<body>
-    <button class="fa-solid fa-plus" align="center">@Html.ActionLink("Add New Batch", "Create", "BatchDetail", new { @class = "fa-solid fa-plus" })</button>
-    <table class="table table-bordered table-striped m-auto">
-        <thead>
-            <tr class="table-dark text-center">
-                <th>Batch ID</th>
-                <th>Total Employees In Batch</th>
-                <th>Shift ID</th>
-                <th style="width: 25%">Actions</th>
-            </tr>
-        </thead>
-        <thead>
-            @foreach (var p in Model.BatchDetails)
-            {
-                <tr>
-                    @Html.Partial("BatchDetailSummery", p)
-                </tr>
-            }
-        </thead>
-    </table>
-    <div class="pagination justify-content-center">
-        @Html.PageLinks(Model.PagingInfo, x => Url.Action("BatchDetailList", new { page = x }))
 
+@*=================*@
+
+
+<div class="panel panel-default">
+    <div class="panel-body" style="float:none;margin:auto;">
+        <button class="btn btn-info" align="center" style="margin:1cm">
+            <i class="fa-solid fa-plus"></i>
+            @Html.ActionLink("Add New Batch", "Create", "BatchDetail", new { @class = "btn btn-info" })
+        </button>
+        <table class="table  table-hover w-auto" style="color:white; font-weight:100; font-family:'Times New Roman', Times, serif;margin:1cm;margin-top:0">
+            <thead>
+                <tr>
+                    <td colspan="4" align="center">
+                        <h2>Batches Available</h2>
+                    </td>
+                </tr>
+                <tr class="table-dark">
+                    <th>Batch ID</th>
+                    <th>Total Employees In Batch</th>
+                    <th>Shift ID</th>
+                    <th style="width: 25%">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model.BatchDetails)
+
+                {
+                    @Html.Partial("BatchDetailSummery", p)
+                }
+
+
+                <tr>
+                    <td colspan="4" align="center">
+
+                        @Html.PageLinks(Model.PagingInfo, x => Url.Action("BatchDetailList", new { page = x }))
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
     </div>
-</body>
-</html>
+</div>

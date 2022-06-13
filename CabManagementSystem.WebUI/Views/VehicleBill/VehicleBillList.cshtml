@@ -10,7 +10,8 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Vehicle Bills</title>
+
+    <title>Cab Management System</title>
 </head>
 <body>
     @*<button class="fa-solid fa-plus" align="center">@Html.ActionLink("Add New Route", "Create", "RouteDetailsById", new { @class = "fa-solid fa-plus" })</button>*@
@@ -21,7 +22,13 @@
                 <b>Search by Route ID:</b> <input type="text" placeholder="Enter route ID" required name="ID" /> <input type="submit" value="search" />
             }
         </p>*@
-    <div>
+
+    <div style="margin:1cm">
+        <button class="btn btn-info" align="center">
+            <i class="fa-solid fa-plus"></i>
+            @Html.ActionLink("Add New Bill", "Create", "VehicleBillList", new { @class = "btn btn-info" })
+        </button>
+        
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>

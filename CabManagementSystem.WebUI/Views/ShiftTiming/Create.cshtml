@@ -6,70 +6,76 @@
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
+<title>Cab Management System</title>
+
+@using (Html.BeginForm("Create", "ShiftTiming", FormMethod.Post))
+
+{
+    @Html.Raw(ViewBag.ErrorMessage)
 
 
-<div class="panel">
-    <div class="panel-heading">
-        <h3>Create New Shift</h3>
+    <title>Cab Management System</title>
+
+    <div class="container py-5 h-100 ">
+
+        <div class="row g-0">
+            <span id="d1" style="margin-top:20px; font-size:130%">
+
+                <b style="margin-left:38%;align-self:center">Add New Shift</b>
+
+            </span>
+            <hr />
+            <div class="col-lg-6" style="float:none;margin:auto;">
+
+                <div class="card-body p-md-5 mx-md-4" style="margin-left:35%">
+
+                    <div class="form-outline mb-4">
+                        <label for="shiftId"><b>Shift ID</b></label>
+                        @Html.EditorFor(model => model.shiftId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.shiftId, "", new { @style = "color:white" })
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label for="ShiftName"><b>Shift Name</b></label>
+                        @Html.DropDownListFor(m => m.ShiftName,
+                                    new SelectList(Enum.GetValues(typeof(Shifts))),
+                                    "Select Shift", new { @class = "form-control dropdown-content" })
+                        @Html.ValidationMessageFor(model => model.ShiftName, "", new { @style = "color:white" })
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label for="shiftStartTime"><b>Start time</b></label>
+                        @Html.EditorFor(model => model.shiftStartTime, new { htmlAttributes = new { @class = "form-control time", } })
+                        @Html.ValidationMessageFor(model => model.shiftStartTime, "", new { @style = "color:white" })
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label for="shiftEndTime"><b>Dispatch time</b></label>
+                        @Html.EditorFor(model => model.shiftEndTime, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.shiftEndTime, "", new { @style = "color:white" })
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label for="totalBatches"><b>Total no of batches</b></label>
+                        @Html.EditorFor(model => model.totalBatches, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.totalBatches, "", new { @style = "color:white" })
+                    </div>
+
+                </div>
+            </div>
+            @*============================*@
+        </div>
+        <div class="text-center pt-1 mb-5 pb-1">
+            <button class="btn btn-primary button-29 btn-block fa-lg gradient-custom-2 mb-3" type="submit">
+                Save
+            </button>
+            &nbsp;&nbsp;&nbsp;
+            <button class="btn btn-dark button-29 btn-block fa-lg mb-3" type="reset">
+                Cancel
+            </button>
+        </div>
     </div>
 
-    @using (Html.BeginForm("Create", "ShiftTiming", FormMethod.Post))
-    {
-        <div class="form-horizontal " style="width: 800px; margin:50px; align-content:center">
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-            <div class="form-group">
-
-                <label for="shiftId"><b>Shift ID</b></label>
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.shiftId, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.shiftId, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="ShiftName"><b>Shift Name</b></label>
-                <div class="col-md-10">
-                    @Html.DropDownListFor(m => m.ShiftName,
-                                new SelectList(Enum.GetValues(typeof(Shifts))),
-                                "Select Shift", new { @class = "form-control dropdown-content fa" })
-                    @Html.ValidationMessageFor(model => model.ShiftName, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="form-group">
-
-                <label for="shiftStartTime"><b>Start time</b></label>
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.shiftStartTime, new { htmlAttributes = new { @class = "form-control time", } })
-                    @Html.ValidationMessageFor(model => model.shiftStartTime, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="shiftEndTime"><b>Dispatch time</b></label>
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.shiftEndTime, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.shiftEndTime, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="totalBatches"><b>Total no of batches</b></label>
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.totalBatches, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.totalBatches, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="panel-footer">
-                <input type="submit" value="Save" class="btn btn-success" />
-                @Html.ActionLink("Cancle And Return to List", "ShiftTimingList", null, new { @class = "btn btn-default" })
-            </div>
-
-        </div>
-    }
-</div>
-
-
+}
 
 

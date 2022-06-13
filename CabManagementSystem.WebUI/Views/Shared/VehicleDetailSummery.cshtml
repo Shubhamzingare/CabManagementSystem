@@ -11,10 +11,16 @@
     <td>@Model.capacity</td>
     <td>@Model.routeId</td>
     <td style="width:40px">
-        @Html.ActionLink("Edit", "Edit", new { id = @Model.vehicleId }) |
-        @Html.ActionLink("Delete", "Delete",
-    new { id = @Model.vehicleId },
-    new { onclick = "return confirm('Are you sure you wish to delete this Vehicle?');" });
-    </td>
+        <button class="btn btn-warning" align="center">
+            <i class="fa-solid fa-pen-to-square"></i>
+            @Html.ActionLink("Edit", "Edit", new { id = @Model.vehicleId })
+        </button>&nbsp;
+        <button class="btn btn-danger" align="center">
+            <i class="fa-solid fa-trash-can"></i>
+            @Html.ActionLink("Delete", "Delete",
+        new { id = @Model.vehicleId },
+        new { onclick = "return confirm('Are you sure you wish to delete this Vehicle?');" })
+
+        </button>
 
 </tr>

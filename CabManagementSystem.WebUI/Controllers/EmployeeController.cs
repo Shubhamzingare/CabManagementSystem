@@ -11,7 +11,7 @@ using System.Net;
 
 namespace CabManagementSystem.WebUI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class EmployeeController : Controller
     {
         CabDbContext db = new CabDbContext();
@@ -24,7 +24,7 @@ namespace CabManagementSystem.WebUI.Controllers
             this.repository = repo;
         }
 
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ViewResult List(int page = 1)
         {
             EmployeeListViewModel model = new EmployeeListViewModel
@@ -42,14 +42,14 @@ namespace CabManagementSystem.WebUI.Controllers
             };
             return View(model);
         }
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ViewResult Edit(int id)
         {
             Employee employee = repository.Employees.FirstOrDefault(p => p.empId == id);
             return View(employee);
         }
         [HttpPost]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ActionResult Edit(Employee employee)
         {
             if (ModelState.IsValid)
@@ -64,13 +64,13 @@ namespace CabManagementSystem.WebUI.Controllers
             }
         }
         [HttpGet]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ViewResult Create()
         {
             return View();
         }
         [HttpPost]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ActionResult Create(Employee employee)
         {
             if (ModelState.IsValid)
@@ -82,7 +82,7 @@ namespace CabManagementSystem.WebUI.Controllers
 
             return View(employee);
         }
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ActionResult Delete(int id)
         {
             Employee employee = db.Employees.Find(id);
@@ -91,7 +91,7 @@ namespace CabManagementSystem.WebUI.Controllers
             return RedirectToAction("List");
 
         }
-        [AllowAnonymous]
+        //[AllowAnonymous]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

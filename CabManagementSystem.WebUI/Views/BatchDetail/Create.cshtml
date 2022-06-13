@@ -7,72 +7,62 @@
 
 
 @using (Html.BeginForm("Create", "BatchDetail", FormMethod.Post))
+
 {
     @Html.Raw(ViewBag.ErrorMessage)
+    <title>Cab Management System</title>
+    <div class="container py-5 h-100 ">
 
-    <section class=" gradient-form">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-xl-10">
-                    <div class="card rounded-3 text-black">
-                        <div class="row g-0">
-                            <div class="col-lg-6">
-                                <div class="card-body p-md-5 mx-md-4">
+        <div class="row g-0">
+            <span id="d1" style="margin-top:20px; font-size:130%">
 
-                                    <form>
-                                        <h3>Create New Batch</h3>
-                                        <hr />
+                <b style="margin-left:38%;align-self:center">Add New Batch</b>
 
-                                        <div class="form-outline mb-4">
-                                            <label class="form-label" for="batchId"><b>Batch ID</b></label>
-                                            @Html.TextBoxFor(m => m.batchId, new { @class = "form-input", @placeholder = " Enter Batch Id " })
-                                            @Html.ValidationMessageFor(model => model.batchId, "", new { @class = "text-danger" })
-                                        </div>
+            </span>
+            <hr />
+            <div class="col-lg-6" style="float:none;margin:auto;">
 
-                                        <div class="form-outline mb-4">
-                                            <label class="form-label" for="totalEmp"><b>Total Eployees In Batch</b></label>
-                                            @Html.TextBoxFor(m => m.totalEmp, new { @class = "form-input", @placeholder = " Enter total employees " })
-                                            @Html.ValidationMessageFor(model => model.totalEmp, "", new { @class = "text-danger" })
-                                        </div>
+                <div class="card-body p-md-5 mx-md-4" style="margin-left:35%">
 
-                                        <div class="form-outline mb-4">
-                                            <label class="form-label" for="shiftId"><b>Shift ID</b></label>
-                                            @Html.TextBoxFor(m => m.shiftId, new { @class = "form-input", @placeholder = " Enter Batch Id " })
-                                            @Html.ValidationMessageFor(model => model.shiftId, "", new { @class = "text-danger" })
-                                        </div>
-
-                                        <div class="text-center pt-1 mb-5 pb-1">
-                                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">
-                                                Save
-                                            </button>
-                                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="reset">
-                                                Cancel
-                                            </button>
-                                        </div>
-
-                                        @*<div class="d-flex align-items-center justify-content-center pb-4">
-                                                <p class="mb-0 me-2">Cancle And Return to List</p>
-
-                                                <button type="button" class="btn btn-outline-danger">
-                                                    @Html.ActionLink("BatchDetailList", null, new { @class = "btn btn-default" })
-                                                </button>
-                                            </div>*@
-
-                                    </form>
-
-                                </div>
-                            </div>
-
-                        </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="batchId"><b>Batch ID</b></label>
+                        @Html.TextBoxFor(m => m.batchId, new { @class = "form-input", @placeholder = " Enter Batch Id " })
+                        @Html.ValidationMessageFor(model => model.batchId, "", new { @style = "color:white" })
                     </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="totalEmp"><b>Total Eployees In Batch</b></label>
+                        @Html.TextBoxFor(m => m.totalEmp, new { @class = "form-input", @placeholder = " Enter total employees " })
+                        @Html.ValidationMessageFor(model => model.totalEmp, "", new { @style = "color:white" })
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="shiftId"><b>Shift ID</b></label>
+                        @Html.TextBoxFor(m => m.shiftId, new { @class = "form-input", @placeholder = " Enter Batch Id " })
+                        @Html.ValidationMessageFor(model => model.shiftId, "", new { @style = "color:white" })
+                    </div>
+
+
                 </div>
             </div>
+            @*============================*@
         </div>
-    </section>
+        <div class="text-center pt-1 mb-5 pb-1">
+            <button class="btn btn-primary button-29 btn-block fa-lg gradient-custom-2 mb-3" type="submit">
+                Save
+            </button>
+            &nbsp;&nbsp;&nbsp;
+            <button class="btn btn-dark button-29 btn-block fa-lg mb-3" type="reset">
+                Cancel
+            </button>
+            <br />
+            <button class="btn btn-primary button-29 btn-block fa-lg gradient-custom-2 mb-3">
+                @Html.ActionLink("Cancel to List", "BatchDetailList", null, new { @class = "btn btn-default" })
+            </button>
+        </div>
+    </div>
+
 }
-
-
-
 
 
 

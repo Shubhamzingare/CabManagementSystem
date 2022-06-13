@@ -20,10 +20,14 @@ namespace CabManagementSystem.Domain.CustomValidations
         public override bool IsValid(object value)
         {
             DateTime DOB;
-            if (DateTime.TryParse(value.ToString(), out DOB))
+            if (value!=null)
             {
-                return DOB.AddYears(_minimumAge) < DateTime.Now;
+                if (DateTime.TryParse(value.ToString(), out DOB))
+                {
+                    return DOB.AddYears(_minimumAge) < DateTime.Now;
+                }
             }
+            
 
             return false;
         }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://icon-sets.iconify.design/bxl/c-plus-plus/" />
     <link href="~/Content/dashboard.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-grid.rtl.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-grid.min.css" rel="stylesheet" />
@@ -15,9 +16,81 @@
     <link href="~/Content/allcssstyling.css" rel="stylesheet" />
     <script src="~/Scripts/navbar script.js"></script>
     <link href="~/Content/LoginPage.css" rel="stylesheet" />
+    <link href="~/Content/Experiment.css" rel="stylesheet" />
+    <script src="~/Scripts/Experiment.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+
     <style>
         body {
             margin-bottom: 200px;
+        }
+        /*===================Table Props==============*/
+        table {
+            width: 800px;
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 10px 10px 20px #888888;
+            table-layout: fixed;
+        }
+
+        tr {
+            border: none;
+        }
+
+        td:hover {
+            color: transparent;
+            text-shadow: 0 0 3px #aaa;
+            color: #7b71eb;
+            text-shadow: 0 1px 0 #fff;
+        }
+
+        thead {
+            background-color: rgba(255, 255, 255, 0.3)
+        }
+
+        .tbl-content {
+            height: 300px;
+            overflow-x: auto;
+            margin-top: 0px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        th {
+            padding: 20px 15px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 15px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        td {
+            /* padding: 15px;*/
+            /* vertical-align: middle;*/
+            /*font-weight: 300;*/
+            /*font-size: 18px;*/
+            text-align: center;
+            color: #fff;
+            /* border-bottom: solid 1px rgba(255, 255, 255, 0.1);*/
+        }
+
+        .input-validation-error {
+            background: aqua;
+            border: 10px solid white;
+        }
+
+        /*============================================*/
+        d1 {
+            align-items: center
+        }
+        /*======================================*/
+
+        footer {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
         }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,8 +102,11 @@
 
     <div class="sidebar close">
         <div class="logo-details">
-            <i class="fa-solid fa-c"></i>
+
+            
+                <i class="bx bxl-c-plus-plus"></i>
             <span class="logo_name">Cab Management</span>
+
         </div>
         <ul class="nav-links">
 
@@ -223,10 +299,9 @@
             </li>
         </ul>
     </div>
-<<<<<<< Updated upstream
-    <section class="home-section">
-        <div class="home-content">
-=======
+
+
+
     
     <section class="home-section" style="color:white">
         <div>
@@ -256,23 +331,19 @@
             </nav>
         </div>
         <div class="home-content" >
->>>>>>> Stashed changes
+
             <i class='bx bx-menu'></i>
             <span class="text" style="color:white">Welcome @Session["UserName"]</span>
 
         </div>
-<<<<<<< Updated upstream
-        <div class="container" style="margin:0.5px">
-            @RenderBody();
-        </div>
-    </section>
-=======
+
         <div class="container" style="margin:0.5px;margin-right:4cm">
             @RenderBody()
         </div>
     </section>
 
     <footer class="footer-section col-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 30%; background-color: #2a6668;color:white">
+
 
         <div class="container">
             <div class="footer-cta pt-5 pb-5">
@@ -405,7 +476,6 @@
         </div>
     </footer>
 
->>>>>>> Stashed changes
     <script>
         let arrow = document.querySelectorAll(".arrow");
         for (var i = 0; i < arrow.length; i++) {

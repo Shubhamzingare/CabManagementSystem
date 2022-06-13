@@ -19,7 +19,7 @@ namespace CabManagementSystem.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(Domain.Entities.User user)
+        public ActionResult Index(User user)
         {
             var userData = context.Users.Where(model => model.UserType == user.UserType &&
                                         model.UserName == user.UserName &&
@@ -29,7 +29,7 @@ namespace CabManagementSystem.WebUI.Controllers
                 Session["UserType"] = user.UserType;
                 Session["UserName"] = user.UserName.ToString();
                 TempData["LoginSuccessMessage"] = "<script>alert('Login Succesful!')</script>";
-                return RedirectToAction("UserDashboard", "Dashboard");
+                return RedirectToAction("ChangePassword", "ChangePwd");
             }
             else
             {
@@ -44,7 +44,7 @@ namespace CabManagementSystem.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(Domain.Entities.User user)
+        public ActionResult Register(User user)
         {
             if (ModelState.IsValid == true)
             {

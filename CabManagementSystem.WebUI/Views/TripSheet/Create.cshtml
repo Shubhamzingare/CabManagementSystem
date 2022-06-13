@@ -10,64 +10,62 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
+    <title>Cab Management System</title>
 </head>
 <body>
-    @using (Html.BeginForm())
-    {
-
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.tripSheetId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.tripSheetId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.tripSheetId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.vehicleAlloId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.vehicleAlloId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.vehicleAlloId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.vehicleId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.vehicleId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.vehicleId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.distanceTravelled, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.distanceTravelled, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.distanceTravelled, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-
-        <div class="col-md-10">
-            <label for="remark">Remark</label>
-            @Html.TextAreaFor(model => model.remark, new { htmlAttributes = new { @class = "form-control", @Columns = "550px", @Rows = "1000px" } })
-            @Html.ValidationMessageFor(model => model.remark, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-outline">
-            <textarea class="form-control" id="textAreaExample1" rows="4"></textarea>
-            <label class="form-label" for="textAreaExample">Message</label>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" /> <input type="reset" value="Cancel" class="btn btn-default" />
-            </div>
-        </div>
+    <div style="margin:1cm">
         <div>
-            @Html.ActionLink("Back to List", "TripSheet")
+            @using (Html.BeginForm())
+            {
+                <span id="d1" style="margin-top:20px; font-size:130%">
+
+                    <b style="margin-left:38%;align-self:center">Add New Trip</b>
+
+                </span>
+                <hr />
+
+                <div class="form-outline mb-4">
+                    <label for="Trip Id"><b>Trip ID</b></label>
+                    @Html.EditorFor(model => model.tripSheetId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.tripSheetId, "", new { @style = "color:white" })
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label for="Vehicle Allocation Id"><b>Vehicle Allocation ID</b></label>
+                    @Html.EditorFor(model => model.vehicleAlloId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.vehicleAlloId, "", new { @style = "color:white" })
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label for="vehicleId"><b>Vehicle Id</b></label>
+                    @Html.EditorFor(model => model.vehicleId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.vehicleId, "", new { @style = "color:white" })
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label for="distance Travelled"><b>Distance Travelled</b></label>
+                    @Html.EditorFor(model => model.distanceTravelled, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.distanceTravelled, "", new { @style = "color:white" })
+                </div>
+
+
+                <div class="form-outline">
+                    <label class="form-label" for="textAreaExample">Remarks</label>
+                    @Html.EditorFor(model => model.distanceTravelled, new { htmlAttributes = new { @class = "form-control", style = "height:2cm" } })
+                    @Html.ValidationMessageFor(model => model.distanceTravelled, "", new { @style = "color:white" })
+                </div>
+
+                <div class="text-center pt-1 mb-5 pb-1">
+                    <button class="btn btn-primary button-29 btn-block fa-lg gradient-custom-2 mb-3" type="submit">
+                        Save
+                    </button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-dark button-29 btn-block fa-lg mb-3" type="reset">
+                        Cancel
+                    </button>
+                </div>
+            }
         </div>
-    }
+    </div>
 </body>
 </html>

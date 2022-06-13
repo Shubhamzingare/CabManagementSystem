@@ -5,38 +5,48 @@
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Route Details</title>
-</head>
-<body>
-    <table class="table table-bordered table-striped m-auto">
-        <thead>
-            <tr class="table-dark text-center">
-                <th>Route ID</th>
-                <th>Employee ID</th>
-                <th>Employee Name</th>
-                <th>Source Location</th>
-                <th>Destination Location</th>
-                <th>Batch ID</th>
-            </tr>
-        </thead>
-        <thead>
-            @foreach (var p in Model.RouteDetails)
-            {
+
+<title>Route Details</title>
+
+<div class="panel panel-default">
+    <div class="panel-body" style="float:none;margin:auto;">
+        <button class="btn btn-info" align="center" style="margin:1cm">
+            <i class="fa-solid fa-plus"></i>
+            @Html.ActionLink("Add New Route", "Create", "RouteDetail", new { @class = "btn btn-info" })
+        </button>
+        <table class="table  table-hover w-auto" style="color:white; font-weight:100; font-family:'Times New Roman', Times, serif;margin:1cm;margin-top:0">
+            <thead>
                 <tr>
-                    @Html.Partial("RouteDetailSummery", p)
-                </tr>
-                <tr>
-                    <td colspan="6" align="right">
+                    <td colspan="7" align="center">
+                        <h2>Routes Available</h2>
                     </td>
                 </tr>
-            }
-        </thead>
-    </table>
-    <div class="pagination justify-content-center">
+                <tr class="table-dark">
+                    <th>Route ID</th>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Source Location</th>
+                    <th>Destination Location</th>
+                    <th>Batch ID</th>
+                    <th style="width: 25%">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model.RouteDetails)
 
+                {
+                    @Html.Partial("RouteDetailSummery", p)
+                }
+
+              
+                <tr>
+                    <td colspan="7" align="center">
+
+                        @Html.PageLinks(Model.PagingInfo, x => Url.Action("RouteDetailList", new { page = x }))
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
     </div>
-</body>
-</html>
+</div>
