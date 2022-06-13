@@ -5,43 +5,50 @@
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Vehicle Allocation</title>
-</head>
-<body>
-    <div style="margin:1cm">
-        <button class="btn btn-info" align="center">
+<title>Cab Management System</title>
+
+
+
+@*+===========================*@
+
+<div class="panel panel-default">
+    <div class="panel-body" style="float:none;margin:auto;">
+        <button class="btn btn-info" align="center" style="margin:1cm">
             <i class="fa-solid fa-plus"></i>
             @Html.ActionLink("Add New Allocation", "Create", "VehicleAllocation", new { @class = "btn btn-info" })
         </button>
-        <table class="table table-bordered table-striped">
+        <table class="table  table-hover w-auto" style="color:white; font-weight:100; font-family:'Times New Roman', Times, serif;margin:1cm;margin-top:0">
             <thead>
                 <tr>
+                    <td colspan="6" align="center">
+                        <h2>Allocated Vehicles</h2>
+                    </td>
+                </tr>
+                <tr class="table-dark">
                     <th>Vehicle Allocation ID</th>
                     <th>Vehicle ID</th>
                     <th>Employee ID</th>
                     <th>Driver ID</th>
                     <th>Pickup/Drop</th>
                     <th>Route ID</th>
-
                 </tr>
             </thead>
-            <thead>
+            <tbody>
                 @foreach (var p in Model.VehicleAllocations)
-                {
-                    <tr>
-                        @Html.Partial("VehicleAllocationSummery", p)
-                    </tr>
-                }
-            </thead>
-        </table>
-        <br />
-        <div class="pagination justify-content-center">
-            @Html.PageLinks(Model.PagingInfo, x => Url.Action("VehicleAllocationList", new { page = x }))
 
-        </div>
+                {
+                    @Html.Partial("VehicleAllocationSummery", p)
+                }
+
+
+                <tr>
+                    <td colspan="6" align="center">
+
+                        @Html.PageLinks(Model.PagingInfo, x => Url.Action("VehicleAllocationList", new { page = x }))
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
     </div>
-</body>
-</html>
+</div>
