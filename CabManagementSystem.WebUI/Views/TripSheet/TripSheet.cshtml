@@ -6,58 +6,51 @@
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
+<title>Cab Management System</title>
 <!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
 
-    <title>Cab Management System</title>
-</head>
-<body>
-    @*<button class="fa-solid fa-plus" align="center">@Html.ActionLink("Add New Route", "Create", "RouteDetailsById", new { @class = "fa-solid fa-plus" })</button>*@
+@*======================*@
 
-    @*<p>
-            @using (Html.BeginForm("RouteDetailsById", "RouteDetail", FormMethod.Get))
-            {
-                <b>Search by Route ID:</b> <input type="text" placeholder="Enter route ID" required name="ID" /> <input type="submit" value="search" />
-            }
-        </p>*@
-    <div style="margin:1cm">
-        <button class="btn btn-info" align="center">
+
+<div class="panel panel-default">
+    <div class="panel-body" style="float:none;margin:auto;">
+        <button class="btn btn-info" align="center" style="margin:1cm">
             <i class="fa-solid fa-plus"></i>
             @Html.ActionLink("Add New Trip", "Create", "TripSheet", new { @class = "btn btn-info" })
-        </button><br /><br /><br />
-
-        <div style="margin:0cm">
-            <table class="table table-bordered table-striped">
-                <thead>
+        </button>
+        <table class="table  table-hover w-auto" style="color:white; font-weight:100; font-family:'Times New Roman', Times, serif;margin:1cm;margin-top:0">
+            <thead>
+                <tr>
+                    <td colspan="7" align="center">
+                        <h2>Trips</h2>
+                    </td>
+                </tr>
+                <tr class="table-dark">
+                    <th>Trip Sheet ID</th>
+                    <th>Vehicle Allocation ID</th>
+                    <th>Vehicle ID</th>
+                    <th>Rate per Km</th>
+                    <th>Distance Travelled in KM</th>
+                    <th>Total Amount</th>
+                    <th>Remark</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model)
+                {
                     <tr>
-                        <th>Trip Sheet ID</th>
-                        <th>Vehicle Allocation ID</th>
-                        <th>Vehicle ID</th>
-                        <th>Rate per Km</th>
-                        <th>Distance Travelled in KM</th>
-                        <th>Total Amount</th>
-                        <th>Remark</th>
+                        <td>@p.TripSheets.tripSheetId</td>
+                        <td>@p.TripSheets.vehicleAlloId</td>
+                        <td>@p.TripSheets.vehicleId</td>
+                        <td>@p.VehicleDetails.ratePerKM</td>
+                        <td>@p.TripSheets.distanceTravelled</td>
+                        <td>@((p.VehicleDetails.ratePerKM*p.TripSheets.distanceTravelled))</td>
+                        <td>@p.TripSheets.remark</td>
                     </tr>
-                </thead>
-                <tbody>
-                    @foreach (var p in Model)
-                    {
-                        <tr>
-                            <td>@p.TripSheets.tripSheetId</td>
-                            <td>@p.TripSheets.vehicleAlloId</td>
-                            <td>@p.TripSheets.vehicleId</td>
-                            <td>@p.VehicleDetails.ratePerKM</td>
-                            <td>@p.TripSheets.distanceTravelled</td>
-                            <td>@((p.VehicleDetails.ratePerKM*p.TripSheets.distanceTravelled))</td>
-                            <td>@p.TripSheets.remark</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
+                }
+            </tbody>
+
+        </table>
     </div>
-</body>
-</html>
+</div>
