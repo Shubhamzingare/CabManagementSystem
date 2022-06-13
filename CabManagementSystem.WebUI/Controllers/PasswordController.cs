@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace CabManagementSystem.WebUI.Controllers
 {
-    public class ChangePwdController : Controller
+    public class PasswordController : Controller
     {
         CabDbContext context = new CabDbContext();
         public ActionResult ChangePassword()
@@ -41,7 +41,7 @@ namespace CabManagementSystem.WebUI.Controllers
                 }
                 else
                 {
-                    TempData["msg"] = "<script>alert('New password match !!! Please check');</script>";
+                    TempData["msg"] = "<script>alert('New password and confirm password don't match !!! Please check');</script>";
                 }
             }
             else

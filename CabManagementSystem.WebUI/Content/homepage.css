@@ -1,0 +1,23 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Work+Sans:wght@300;400;500&display=swap');
+
+.main{
+    height:100%;
+    width:100%;
+    background-color: transparent;
+}
+
+.container-xxl{
+    margin: 1.5cm;
+    background-color: transparent;
+    height: 800px;
+    width: 1150px;
+    align-content: center;
+    border-radius: 40px;
+}
+
+h1, p {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+
