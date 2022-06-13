@@ -16,7 +16,7 @@
     <div style="margin:1cm">
         <button class="btn btn-info" align="center">
             <i class="fa-solid fa-plus"></i>
-        @Html.ActionLink("Add New Vehicle", "Create", "VehicleDetail", new { @class = "btn btn-info" })
+            @Html.ActionLink("Add New Vehicle", "Create", "VehicleDetail", new { @class = "btn btn-info" })
         </button>
         <br />
         <table class="table table-bordered table-striped">
@@ -41,11 +41,11 @@
                 }
             </tbody>
         </table>
-    </div>
-    <br />
-    <div class="btn-group pull-right" align="right">
-        @Html.PageLinks(Model.PagingInfo, x => Url.Action("VehicleDetailList", new { page = x }))
 
+        <br />
+        <div class="pagination justify-content-center">
+            @Html.PageLinks(Model.PagingInfo, x => Url.Action("VehicleDetailList", new { page = x }))
+        </div>
     </div>
 </body>
 </html>
