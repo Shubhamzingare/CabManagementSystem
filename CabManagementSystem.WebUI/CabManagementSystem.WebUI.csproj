@@ -128,6 +128,11 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\dashboard.css" />
+<<<<<<< Updated upstream
+=======
+    <Content Include="Content\Experiment.css" />
+    <Content Include="Content\homepage.css" />
+>>>>>>> Stashed changes
     <Content Include="Scripts\dashboard.js" />
     <Content Include="Content\LoginPage.css" />
     <Content Include="Content\Site.css" />
@@ -140,6 +145,11 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+<<<<<<< Updated upstream
+=======
+    <Content Include="Scripts\Experiment.js" />
+    <Content Include="Scripts\homepage.js" />
+>>>>>>> Stashed changes
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
@@ -161,7 +171,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BatchDetailController.cs" />
-    <Compile Include="Controllers\ChangePwdController.cs" />
+    <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\RouteDetailController.cs" />
@@ -250,7 +260,7 @@
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Views\RouteDetail\RouteDetailList.cshtml" />
     <Content Include="Views\Shared\RouteDetailSummery.cshtml" />
-    <Content Include="Views\ChangePwd\ChangePassword.cshtml" />
+    <Content Include="Views\Password\ChangePassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
