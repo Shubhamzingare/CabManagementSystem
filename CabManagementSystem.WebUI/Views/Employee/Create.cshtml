@@ -17,7 +17,7 @@
     <div class="container py-5 h-100">
 
                <div class="row g-0" >
-                        <span id="d1" style="margin-top:20px; font-size:130%">
+                        <span id="d1" style="margin-top:5px; font-size:130%">
 
                             <b style="margin-left:38%;">Add New Employee</b>
 
@@ -30,13 +30,13 @@
                                 <div class="form-outline mb-4">
                                     <label for="empId"><b>Employee ID</b></label><br />
                                     @Html.TextBoxFor(m => m.empId, new { @class = "form-input", @placeholder = " Enter Employee ID " })
-                                    @Html.ValidationMessageFor(model => model.empId, "", new {  @style= "color:white"})
+                                    @Html.ValidationMessageFor(model => model.empId, "", new { @style = "color:white" })
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <label for="empName"><b>Employee Name</b></label><br />
                                     @Html.TextBoxFor(m => m.empName, new { @class = "form-input", @placeholder = " Enter Name " })
-                                    @Html.ValidationMessageFor(model => model.empId, "", new { @style = "color:white" })
+                                    @Html.ValidationMessageFor(model => model.empName, "", new { @style = "color:white" })
                                 </div>
 
                                 <div class="form-outline mb-4">
@@ -52,15 +52,15 @@
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <label for="DOB"><b>Date Of Birth</b></label><br />
-                                    @Html.EditorFor(m => m.DOB, new { @class = "form-input" })
-                                    @Html.ValidationMessageFor(model => model.DOB, "", new { @style = "color:white" })
+                                    <label for="comAddress"><b>Qualification</b></label><br />
+                                    @Html.TextBoxFor(m => m.qualification, new { @class = "form-input", @placeholder = " Enter Qualification " })
+                                    @Html.ValidationMessageFor(model => model.qualification, "", new { @style = "color:white" })
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <label for="vehrequired"><b>Vehicle Required [Yes/No]</b></label><br />
-                                    @Html.DropDownListFor(model => model.vehrequired, new SelectList(new[] { "Yes", "No" }), "Select Yes/No", new { @class = "form-control dropdown-content fa" })
-                                    @Html.ValidationMessageFor(model => model.vehrequired, "", new { @style = "color:white" })
+                                    <label for="DOB"><b>Date Of Birth</b></label><br />
+                                    @Html.EditorFor(m => m.DOB, new { @class = "form-input" })
+                                    @Html.ValidationMessageFor(model => model.DOB, "", new { @style = "color:white" })
                                 </div>
 
 
@@ -73,10 +73,15 @@
                         <div class="col-lg-6">
                             <div class="card-body p-md-5 mx-md-4">
 
+                                <div class="form-outline mb-4">
+                                    <label for="vehrequired"><b>Vehicle Required [Yes/No]</b></label><br />
+                                    @Html.DropDownListFor(model => model.vehrequired, new SelectList(new[] { "Yes", "No" }), "Select Yes/No", new { @class = "form-control dropdown-content" })
+                                    @Html.ValidationMessageFor(model => model.vehrequired, "", new { @style = "color:white" })
+                                </div>
 
                                 <div class="form-outline mb-4 ">
                                     <label for="gender"><b>Gender</b></label><br />
-                                    @Html.DropDownListFor(model => model.gender, new SelectList(new[] { "Male", "Female","Other" }), "Select Gender", new { @class = "form-control dropdown-content fa" })
+                                    @Html.DropDownListFor(model => model.gender, new SelectList(new[] { "Male", "Female", "Other" }), "Select Gender", new { @class = "form-control dropdown-content" })
                                     @Html.ValidationMessageFor(model => model.gender, "", new { @style = "color:white" })
                                 </div>
 
@@ -96,7 +101,7 @@
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="department"><b>Department</b></label><br />
                                     @Html.TextBoxFor(m => m.department, new { @class = "form-input", @placeholder = " Enter Department" })
-                                    @Html.ValidationMessageFor(model => model.department, "", new { @style = "color:white",})
+                                    @Html.ValidationMessageFor(model => model.department, "", new { @style = "color:white", })
                                 </div>
 
                                 <div class="form-outline mb-4">

@@ -6,10 +6,15 @@
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
+<title>Cab Management System</title>
+
 @using (Html.BeginForm("Create", "ShiftTiming", FormMethod.Post))
 
 {
     @Html.Raw(ViewBag.ErrorMessage)
+
+
+    <title>Cab Management System</title>
 
     <div class="container py-5 h-100 ">
 
@@ -34,7 +39,7 @@
                         <label for="ShiftName"><b>Shift Name</b></label>
                         @Html.DropDownListFor(m => m.ShiftName,
                                     new SelectList(Enum.GetValues(typeof(Shifts))),
-                                    "Select Shift", new { @class = "form-control dropdown-content fa" })
+                                    "Select Shift", new { @class = "form-control dropdown-content" })
                         @Html.ValidationMessageFor(model => model.ShiftName, "", new { @style = "color:white" })
                     </div>
 

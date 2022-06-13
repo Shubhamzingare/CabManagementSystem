@@ -1,12 +1,18 @@
 ﻿@model CabManagementSystem.Domain.Entities.ShiftTiming
 
-<tr class="text-center">
+
+<title>Cab Management System</title>
+
+<tr class="text-center" style="margin:1cm">
     <td>@Model.shiftId</td>
     <td>@Model.ShiftName</td>
     <td>@Model.shiftStartTime</td>
     <td>@Model.shiftEndTime</td>
     <td>@Model.totalBatches</td>
     <td style="width:40px">
-        @Html.ActionLink("Edit", "Edit", new { id = @Model.shiftId }) |
+        <button class="btn btn-warning" align="center">
+            <i class="fa-solid fa-pen-to-square"></i>
+            @Html.ActionLink("Edit", "Edit", new { id = @Model.shiftId })
+        </button>
     </td>
 </tr>

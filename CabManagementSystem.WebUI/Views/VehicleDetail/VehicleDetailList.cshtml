@@ -10,11 +10,15 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>VehicleDetailList</title>
+    <title>Cab Management System</title>
 </head>
 <body>
-    <div>
-        <button class="fa-solid fa-plus" align="center">@Html.ActionLink("Add New Vehicle", "Create", "VehicleDetail", new { @class = "fa-solid fa-plus" })</button>
+    <div style="margin:1cm">
+        <button class="btn btn-info" align="center">
+            <i class="fa-solid fa-plus"></i>
+        @Html.ActionLink("Add New Vehicle", "Create", "VehicleDetail", new { @class = "btn btn-info" })
+        </button>
+        <br />
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -38,6 +42,7 @@
             </tbody>
         </table>
     </div>
+    <br />
     <div class="btn-group pull-right" align="right">
         @Html.PageLinks(Model.PagingInfo, x => Url.Action("VehicleDetailList", new { page = x }))
 

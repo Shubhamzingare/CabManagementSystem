@@ -9,10 +9,13 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Search Shift Details By Shift ID</title>
+    <title>Cab Management System</title>
 </head>
 <body>
-    <button class="fa-solid fa-plus" align="center">@Html.ActionLink("Add New Batch", "Create", "BatchDetail", new { @class = "fa-solid fa-plus" })</button>
+    <button class="btn btn-info" align="center">
+    <i class="fa-solid fa-plus"></i>
+    @Html.ActionLink("Add New Batch", "Create", "BatchDetail", new { @class = "btn btn-info" })</button>
+    <br /><br />
     <table class="table table-bordered table-striped m-auto">
         <thead>
             <tr class="table-dark text-center">
@@ -31,6 +34,7 @@
             }
         </thead>
     </table>
+    <br />
     <div class="pagination justify-content-center">
         @Html.PageLinks(Model.PagingInfo, x => Url.Action("BatchDetailList", new { page = x }))
 

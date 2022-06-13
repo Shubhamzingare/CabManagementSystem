@@ -1,9 +1,14 @@
 ﻿@model CabManagementSystem.Domain.Entities.BatchDetail
+<title>Cab Management System</title>
 
 <tr class="text-center">
     <td>@Model.batchId</td>
     <td>@Model.totalEmp</td>
     <td>@Model.shiftId</td>
     <td style="width:40px">
-        @Html.ActionLink("Edit", "Edit", new { id = @Model.batchId })
+        <button class="btn btn-warning" align="center">
+            <i class="fa-solid fa-pen-to-square"></i>
+            @Html.ActionLink("Edit", "Edit", new { id = @Model.batchId })
+        </button>
+        <br /><br />
 </tr>

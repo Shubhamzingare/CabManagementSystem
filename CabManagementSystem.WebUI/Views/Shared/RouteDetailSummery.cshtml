@@ -8,7 +8,10 @@
     <td>@Model.destLOC</td>
     <td>@Model.batchId</td>
     <td style="width:40px">
-        @Html.ActionLink("Edit", "Edit", new { id = @Model.empId })
+        <button class="btn btn-warning" align="center">
+            <i class="fa-solid fa-pen-to-square"></i>
+            @Html.ActionLink("Edit", "Edit", new { id = @Model.empId })
+        </button>
     </td>
 
 </tr>

@@ -10,45 +10,48 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Shift Details By ID</title>
+    <title>Cab Management System</title>
 </head>
 <body>
-    @Html.Raw(ViewBag.ErrorMessage)
-    <p>
-        @using (Html.BeginForm())
-        {
-            <b>Search by Shift ID:</b> <input type="text" placeholder="Enter shift ID" name="searchID"  required/> <input type="submit" value="search" />
-        }
-    </p>
+    <div style="margin:1cm">
+        @Html.Raw(ViewBag.ErrorMessage)
+        <p>
+            @using (Html.BeginForm())
+            {
+                <b>Search by Shift ID:</b> <input type="text" placeholder="Enter shift ID" name="searchID" required />
+                <input type="submit" value="search" class="btn btn-success" />
+            }
+        </p>
 
-    <div>
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Employee ID</th>
-                    <th>Employee name</th>
-                    <th>Ship Start Time</th>
-                    <th>Ship Dispatch Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model.Count() == 0)
-                {
+        <div style="margin:0cm">
+            <table class="table table-bordered table-striped">
+                <thead>
                     <tr>
-                        <td colspan="4" align="center" style="color:red">No Rows Found</td>
+                        <th>Employee ID</th>
+                        <th>Employee name</th>
+                        <th>Ship Start Time</th>
+                        <th>Ship Dispatch Time</th>
                     </tr>
-                }
-                @foreach (var p in Model)
-                {
-                    <tr>
-                        <td>@p.RouteDetails.empId</td>
-                        <td>@p.RouteDetails.empName</td>
-                        <td>@p.ShiftTimings.shiftStartTime</td>
-                        <td>@p.ShiftTimings.shiftEndTime</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @if (Model.Count() == 0)
+                    {
+                        <tr>
+                            <td colspan="4" align="center" style="color:red">No Rows Found</td>
+                        </tr>
+                    }
+                    @foreach (var p in Model)
+                    {
+                        <tr>
+                            <td>@p.RouteDetails.empId</td>
+                            <td>@p.RouteDetails.empName</td>
+                            <td>@p.ShiftTimings.shiftStartTime</td>
+                            <td>@p.ShiftTimings.shiftEndTime</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>

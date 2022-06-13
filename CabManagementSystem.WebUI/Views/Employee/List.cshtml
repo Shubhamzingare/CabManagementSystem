@@ -5,14 +5,19 @@
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
-<div class="panel panel-default">
-    <div class="panel-body"  style="float:none;margin:auto;">
-        
-        <table class="table  table-hover w-auto" style="color:white; font-weight:100; font-family:'Times New Roman', Times, serif">
+<title>Cab Management System</title>
+
+<div class="panel panel-default" >
+    <div class="panel-body" style="float:none;margin:auto;">
+        <button class="btn btn-info" align="center" style="margin:1cm">
+            <i class="fa-solid fa-plus"></i>
+            @Html.ActionLink("Add New Employee", "Create", "Employee", new { @class = "btn btn-info" })
+        </button>
+        <table class="table  table-hover w-auto" style="color:white; font-weight:100; font-family:'Times New Roman', Times, serif;margin:1cm;margin-top:0">
             <thead>
                 <tr>
                     <td colspan="13" align="right">
-                        <h2>Available Employees</h2>
+                        <h2>Employees</h2>
                     </td>
                 </tr>
                 <tr class="table-dark">
@@ -37,6 +42,9 @@
                 {
                     @Html.Partial("EmployeeSummery", p)
                 }
+
+                <br />
+                <br />
                 <tr>
                     <td colspan="13" align="right">
 
