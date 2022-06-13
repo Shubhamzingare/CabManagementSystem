@@ -14,6 +14,10 @@
             <i class="fa-solid fa-plus"></i>
             @Html.ActionLink("Add New Route", "Create", "RouteDetail", new { @class = "btn btn-info" })
         </button>
+        <button class="btn btn-info" align="center" style="margin:1cm">
+            <i class="fa-solid fa-search"></i>
+            @Html.ActionLink("Search Route", "RouteDetailsById", "RouteDetail", new { @class = "btn btn-info" })
+        </button>
         <table class="table  table-hover w-auto" style="color:white; font-weight:100; font-family:'Times New Roman', Times, serif;margin:1cm;margin-top:0">
             <thead>
                 <tr>
@@ -38,7 +42,7 @@
                     @Html.Partial("RouteDetailSummery", p)
                 }
 
-              
+
                 <tr>
                     <td colspan="7" align="center">
 

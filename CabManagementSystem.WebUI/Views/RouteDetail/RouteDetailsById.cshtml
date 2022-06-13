@@ -13,18 +13,32 @@
     <title> Search Route Details By Id</title>
 </head>
 <body>
-    <button class="fa-solid fa-plus" align="center">@Html.ActionLink("Add New Route", "Create", "RouteDetailsById", new { @class = "fa-solid fa-plus" })</button>
 
     <p>
         @using (Html.BeginForm("RouteDetailsById", "RouteDetail", FormMethod.Get))
         {
-            <b>Search by Route ID:</b> <input type="text" placeholder="Enter route ID" required name="ID" /> <input type="submit" value="search" />
+
+            
+            <div class="form-outline mb-4">
+              <b style="margin:3.5%">Search by Route ID:</b>
+                    <input type="text" placeholder="Enter route ID" class="form-control input-field" style="width:30%;height:auto;margin-left:3.5%" required name="ID" />
+            </div>
+            <button class="btn btn-primary button-29 btn-block fa-lg gradient-custom-2 mb-3" style="color:black;margin-left:3.5%" type="submit">
+                Search
+            </button> <button class="btn btn-primary button-29  fa-lg gradient-custom-2 mb-3">
+                 @Html.ActionLink("Back to List", "RouteDetailList", null, new
+                {
+                    @class = "btn btn-default",
+                    style = "padding: 0.5px 0.5px;"
+                })
+            </button>
+
         }
     </p>
     <div>
-        <table class="table table-bordered table-striped">
+        <table class="table  table-hover w-auto" style="color:white; font-weight:100; font-family:'Times New Roman', Times, serif;margin:1cm;margin-top:0">
             <thead>
-                <tr>
+                <tr class="table-dark">
                     <th>Employee ID</th>
                     <th>Employee name</th>
                     <th>Shift ID</th>
@@ -37,12 +51,12 @@
                 @if (Model.Count() == 0)
                 {
                     <tr>
-                        <td colspan="6" align="center" style="color:red">No Rows Found</td>
+                        <td colspan="6" align="center" style="color:white">No Rows Found</td>
                     </tr>
                 }
                 @foreach (var p in Model)
                 {
-                    <tr>
+                    <tr class="table-dark">
                         <td>@p.RouteDetails.empId</td>
                         <td>@p.RouteDetails.empName</td>
                         <td>@p.BatchDetails.shiftId</td>
@@ -53,6 +67,7 @@
                 }
             </tbody>
         </table>
+
     </div>
 </body>
 </html>

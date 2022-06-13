@@ -18,15 +18,26 @@
         <p>
             @using (Html.BeginForm())
             {
-                <b>Search by Shift ID:</b> <input type="text" placeholder="Enter shift ID" name="searchID" required />
-                <input type="submit" value="search" class="btn btn-success" />
+                <div class="form-outline mb-4">
+                    <b style="margin:3.5%">Search by Shift ID:</b>
+                    <input type="text" placeholder="Enter Shift ID" class="form-control input-field" style="width:30%;height:auto;margin-left:3.5%" required name="searchID" />
+                </div>
+                <button class="btn btn-primary button-29 btn-block fa-lg gradient-custom-2 mb-3" style="color:black;margin-left:3.5%" type="submit">
+                    Search
+                </button> <button class="btn btn-primary button-29  fa-lg gradient-custom-2 mb-3">
+                    @Html.ActionLink("Back to List", "ShiftTimingList","ShiftTiming", null, new
+                   {
+                       @class = "btn btn-default",
+                       style = "padding: 0.5px 0.5px;"
+                   })
+                </button>
             }
         </p>
 
         <div style="margin:0cm">
-            <table class="table table-bordered table-striped">
+            <table class="table  table-hover w-auto" style="color:white; font-weight:100; font-family:'Times New Roman', Times, serif;margin:1cm;margin-top:0">
                 <thead>
-                    <tr>
+                    <tr class="table-dark">
                         <th>Employee ID</th>
                         <th>Employee name</th>
                         <th>Ship Start Time</th>

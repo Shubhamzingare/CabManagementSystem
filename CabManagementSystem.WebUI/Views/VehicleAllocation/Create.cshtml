@@ -81,9 +81,13 @@
                 Cancel
             </button>
             <br />
-                <button class="btn btn-primary button-29 btn-block fa-lg gradient-custom-2 mb-3">
-                    @Html.ActionLink("Cancel to List", "VehicleAllocationList", null, new { @class = "btn btn-default" })
-                </button>
+            <button class="btn btn-primary button-29  fa-lg gradient-custom-2 mb-3">
+                @Html.ActionLink("Back to List", "VehicleAllocationList", null, new
+                {
+                    @class = "btn btn-default",
+               style = "padding: 0.5px 0.5px;"
+           })
+            </button>
         </div>
     </div>
 

@@ -5,33 +5,22 @@
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
 
-    <title>Cab Management System</title>
-</head>
-<body>
-    @*<button class="fa-solid fa-plus" align="center">@Html.ActionLink("Add New Route", "Create", "RouteDetailsById", new { @class = "fa-solid fa-plus" })</button>*@
-
-    @*<p>
-            @using (Html.BeginForm("RouteDetailsById", "RouteDetail", FormMethod.Get))
-            {
-                <b>Search by Route ID:</b> <input type="text" placeholder="Enter route ID" required name="ID" /> <input type="submit" value="search" />
-            }
-        </p>*@
-
-    <div style="margin:1cm">
-        <button class="btn btn-info" align="center">
+<div class="panel panel-default">
+    <div class="panel-body" style="float:none;margin:auto;">
+        <button class="btn btn-info" align="center" style="margin:1cm">
             <i class="fa-solid fa-plus"></i>
             @Html.ActionLink("Add New Bill", "Create", "VehicleBillList", new { @class = "btn btn-info" })
         </button>
-        
-        <table class="table table-bordered table-striped">
+        <table class="table  table-hover w-auto" style="color:white; font-weight:100; font-family:'Times New Roman', Times, serif;margin:1cm;margin-top:0">
             <thead>
                 <tr>
+                    <td colspan="8" align="center">
+                        <h2>Trips</h2>
+                    </td>
+                </tr>
+                <tr class="table-dark">
                     <th>Bill ID</th>
                     <th>Bill No</th>
                     <th>Vehicle ID</th>
@@ -57,7 +46,7 @@
                     </tr>
                 }
             </tbody>
+
         </table>
     </div>
-</body>
-</html>
+</div>
