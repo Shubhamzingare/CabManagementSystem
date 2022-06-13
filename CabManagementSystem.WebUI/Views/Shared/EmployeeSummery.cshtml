@@ -14,17 +14,17 @@
     <td>@Model.designation</td>
     <td>@Model.department</td>
     <td>@Model.DOJ</td>
-    <td style="width:40px">
+    <td style="width:30%">
         <button class="btn btn-warning" align="center">
             <i class="fa-solid fa-pen-to-square"></i>
             @Html.ActionLink("Edit", "Edit", new { id = @Model.empId })
-        </button>&nbsp;
+        </button><br />
         <button class="btn btn-danger" align="center">
             <i class="fa-solid fa-trash-can"></i>
             @Html.ActionLink("Delete", "Delete",
     new { id = @Model.empId },
-    new { onclick = "return confirm('Are you sure you wish to delete this Employee?');" })
+    new { onclick = "return confirm('Are you sure you wish to delete this Employee?')" })
         </button>
-        
+
     </td>
 </tr>
