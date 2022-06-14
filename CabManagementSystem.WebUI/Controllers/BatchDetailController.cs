@@ -10,7 +10,7 @@ using CabManagementSystem.WebUI.Models;
 
 namespace CabManagementSystem.WebUI.Controllers
 {
-   // [Authorize]
+    [CustomAuthenticationFilter]
     public class BatchDetailController : Controller
     {
         CabDbContext db = new CabDbContext();
@@ -22,7 +22,7 @@ namespace CabManagementSystem.WebUI.Controllers
         {
             this.repository = repo;
         }
-        //[AllowAnonymous]
+
         public ViewResult BatchDetailList(int page = 1)
         {
             BatchDetailViewModel model = new BatchDetailViewModel
@@ -40,14 +40,14 @@ namespace CabManagementSystem.WebUI.Controllers
             };
             return View(model);
         }
-        [AllowAnonymous]
+
         public ViewResult Edit(int id)
         {
             BatchDetail batchDetail = repository.BatchDetails.FirstOrDefault(p => p.batchId == id);
             return View(batchDetail);
         }
+
         [HttpPost]
-       // [AllowAnonymous]
         public ActionResult Edit(BatchDetail batchDetail)
         {
             if (ModelState.IsValid)
@@ -61,14 +61,15 @@ namespace CabManagementSystem.WebUI.Controllers
                 return View(batchDetail);
             }
         }
+
         [HttpGet]
-        [AllowAnonymous]
         public ViewResult Create()
         {
             return View();
         }
+
+
         [HttpPost]
-        [AllowAnonymous]
         public ActionResult Create(BatchDetail batchDetail)
         {
             if (ModelState.IsValid)
@@ -80,6 +81,7 @@ namespace CabManagementSystem.WebUI.Controllers
 
             return View(batchDetail);
         }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -9,6 +9,7 @@ using CabManagementSystem.Domain.Abstract;
 using CabManagementSystem.WebUI.Models;
 namespace CabManagementSystem.WebUI.Controllers
 {
+    [CustomAuthenticationFilter]
     public class VehicleAllocationController : Controller
     {
         CabDbContext db = new CabDbContext();
@@ -40,11 +41,13 @@ namespace CabManagementSystem.WebUI.Controllers
             };
             return View(model);
         }
+
         [HttpGet]
         public ViewResult Create()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Create(VehicleAllocationDetail vehicleAllocation)
         {

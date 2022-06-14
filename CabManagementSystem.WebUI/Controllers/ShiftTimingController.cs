@@ -12,7 +12,7 @@ using System.Net;
 
 namespace CabManagementSystem.WebUI.Controllers
 {
-    [Authorize]
+    [CustomAuthenticationFilter]
     public class ShiftTimingController : Controller
     {
         //Prepare for DI
@@ -27,7 +27,7 @@ namespace CabManagementSystem.WebUI.Controllers
         {
             this.repository = repo;
         }
-        [AllowAnonymous]
+
         public ViewResult ShiftTimingList(int page = 1)
         {
             ShiftTimingListViewModel model = new ShiftTimingListViewModel
@@ -45,14 +45,14 @@ namespace CabManagementSystem.WebUI.Controllers
             };
             return View(model);
         }
-        [AllowAnonymous]
+
         public ViewResult Edit(int id)
         {
             ShiftTiming shiftTiming = repository.ShiftTimings.FirstOrDefault(p => p.shiftId == id);
             return View(shiftTiming);
         }
+
         [HttpPost]
-        [AllowAnonymous]
         public ActionResult Edit(ShiftTiming shiftTiming)
         {
             if (ModelState.IsValid)
@@ -66,14 +66,14 @@ namespace CabManagementSystem.WebUI.Controllers
                 return View(shiftTiming);
             }
         }
+
         [HttpGet]
-        [AllowAnonymous]
         public ViewResult Create()
         {
             return View();
         }
 
-        [AllowAnonymous]
+
         [HttpPost]
         public ActionResult Create(ShiftTiming shiftTiming)
         {

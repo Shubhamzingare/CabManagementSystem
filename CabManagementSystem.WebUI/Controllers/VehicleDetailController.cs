@@ -10,6 +10,8 @@ using CabManagementSystem.WebUI.Models;
 
 namespace CabManagementSystem.WebUI.Controllers
 {
+    [CustomAuthenticationFilter]
+
     public class VehicleDetailController : Controller
     {
          CabDbContext db = new CabDbContext();
@@ -39,11 +41,13 @@ namespace CabManagementSystem.WebUI.Controllers
             };
             return View(model);
         }
+
         public ViewResult Edit(int id)
         {
             VehicleDetail vehicleDetail= repository.VehicleDetails.FirstOrDefault(p => p.vehicleId == id);
             return View(vehicleDetail);
         }
+
         [HttpPost]
         public ActionResult Edit(VehicleDetail vehicleDetail)
         {
@@ -58,11 +62,13 @@ namespace CabManagementSystem.WebUI.Controllers
                 return View(vehicleDetail);
             }
         }
+
         [HttpGet]
         public ViewResult Create()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Create(VehicleDetail vehicleDetail)
         {
@@ -75,6 +81,7 @@ namespace CabManagementSystem.WebUI.Controllers
 
             return View(vehicleDetail);
         }
+
         public ActionResult Delete(int id)
         {
             VehicleDetail vehicleDetail = db.VehicleDetails.Find(id);
@@ -83,6 +90,7 @@ namespace CabManagementSystem.WebUI.Controllers
             return RedirectToAction("VehicleDetailList");
 
         }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

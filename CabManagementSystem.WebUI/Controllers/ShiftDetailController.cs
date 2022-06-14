@@ -8,7 +8,7 @@ using CabManagementSystem.Domain.Concrete;
 using CabManagementSystem.WebUI.Models;
 namespace CabManagementSystem.WebUI.Controllers
 {
-  
+    [CustomAuthenticationFilter]
     public class ShiftDetailController : Controller
     {
 
