@@ -167,6 +167,7 @@
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\RouteDetailController.cs" />
     <Compile Include="Controllers\ShiftDetailController.cs" />
     <Compile Include="Controllers\ShiftTimingController.cs" />
@@ -255,6 +256,7 @@
     <Content Include="Views\RouteDetail\RouteDetailList.cshtml" />
     <Content Include="Views\Shared\RouteDetailSummery.cshtml" />
     <Content Include="Views\Password\ChangePassword.cshtml" />
+    <Content Include="Views\Profile\ViewProfile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

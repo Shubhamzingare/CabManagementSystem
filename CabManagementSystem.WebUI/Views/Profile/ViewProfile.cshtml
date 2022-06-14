@@ -1,0 +1,79 @@
+﻿@model IEnumerable<CabManagementSystem.Domain.Entities.User>
+
+@{
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewProfile</title>
+    <style>
+        .c{
+            height:1.5cm;
+        }
+        .c d{
+            width:fit-content
+        }
+    </style>
+</head>
+<body>
+    @foreach (var item in Model)
+    {
+        <div class="container" align="center">
+            <br /><br />
+            <h2>Profile</h2>
+            <br />
+            <table style="font-size:larger">
+                <tr class="c">
+                    <td>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </td>
+                    <td>-</td>
+                    <td >
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                </tr>
+                <tr class="c">
+                    <td >
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </td>
+                    <td>-</td>
+                    <td >
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                </tr>
+                <tr class="c">
+                    <td >
+                        @Html.DisplayNameFor(model => model.Email)
+                    </td>
+                    <td>-</td>
+                    <td >
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                </tr>
+                <tr class="c">
+                    <td >
+                        @Html.DisplayNameFor(model => model.UserType)
+                    </td>
+                    <td>-</td>
+                    <td >
+                        @Html.DisplayFor(modelItem => item.UserType)
+                    </td>
+                </tr>
+                <tr class="c">
+                    <td >
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </td>
+                    <td>-</td>
+                    <td >
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
+</body>
+</html>
