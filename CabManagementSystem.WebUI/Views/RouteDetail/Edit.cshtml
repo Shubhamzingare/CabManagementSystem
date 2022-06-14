@@ -7,7 +7,7 @@
 }
 
 
-@using (Html.BeginForm("Edit", "RouteDetail", FormMethod.Post))
+@using (Html.BeginForm("Edit", "RouteDetail", FormMethod.Post, new {@class="position:realtive"}))
 
 {
     @Html.Raw(ViewBag.ErrorMessage)
@@ -27,39 +27,40 @@
 
                     <div class="form-outline mb-4">
                         <label for="routeId"><b>Route ID</b></label>
-                        @Html.TextBoxFor(model => model.routeId, new { htmlAttributes = new { @class = "form-control " } })
+                        @Html.TextBoxFor(model => model.routeId, new { @class = "form-input", @placeholder = "Enter Route Id" })
                         @Html.ValidationMessageFor(model => model.routeId, "", new { @style = "color:white" })
                     </div>
 
                     <div class="form-outline mb-4">
                         <label for="empId"><b>Employee ID</b></label>
-                        @Html.TextBoxFor(model => model.empId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.TextBoxFor(model => model.empId, new { @class = "form-input", @placeholder = "Enter Employee Id" })
                         @Html.ValidationMessageFor(model => model.empId, "", new { @style = "color:white" })
                     </div>
 
                     <div class="form-outline mb-4">
                         <label for="empName"><b>Employee Name</b></label>
-                        @Html.TextBoxFor(model => model.empName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.TextBoxFor(model => model.empName, new { @class = "form-control", @placeholder = "Enter Employee Name" })
                         @Html.ValidationMessageFor(model => model.empName, "", new { @style = "color:white" })
                     </div>
 
                     <div class="form-outline mb-4">
                         <label for="sourceLOC"><b>Source Location</b></label>
-                        @Html.TextBoxFor(model => model.sourceLOC, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.TextBoxFor(model => model.sourceLOC, new { @class = "form-control", @placeholder = "Enter Source Location" })
                         @Html.ValidationMessageFor(model => model.sourceLOC, "", new { @style = "color:white" })
                     </div>
 
                     <div class="form-outline mb-4">
                         <label for="destLOC"><b>Destination Location</b></label>
-                        @Html.TextBoxFor(model => model.destLOC, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.TextBoxFor(model => model.destLOC, new { @class = "form-control", @placeholder = "Enter Destination Location" })
                         @Html.ValidationMessageFor(model => model.destLOC, "", new { @style = "color:white" })
                     </div>
 
                     <div class="form-outline mb-4">
                         <label for="batchId"><b>Batch ID</b></label>
-                        @Html.TextBoxFor(model => model.batchId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.TextBoxFor(model => model.batchId, new { @class = "form-control", @placeholder = "Enter Batch Id" })
                         @Html.ValidationMessageFor(model => model.batchId, "", new { @style = "color:white" })
                     </div>
+
 
 
                 </div>
