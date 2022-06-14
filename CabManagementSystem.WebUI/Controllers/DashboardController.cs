@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CabManagementSystem.WebUI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,11 +7,10 @@ using System.Web.Mvc;
 
 namespace CabManagementSystem.WebUI.Controllers
 {
-    [Authorize]
+    [CustomAuthenticationFilter]
     public class DashboardController : Controller
     {
         
-        [AllowAnonymous]
         public ActionResult UserDashboard()
         {
             if (Session["UserType"] == null)
@@ -22,7 +22,7 @@ namespace CabManagementSystem.WebUI.Controllers
                 return View();
             }
         }
-        [AllowAnonymous]
+
         public ActionResult Logout()
         {
             Session.Abandon();

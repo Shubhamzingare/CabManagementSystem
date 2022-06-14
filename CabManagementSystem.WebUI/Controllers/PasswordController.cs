@@ -1,5 +1,6 @@
 ﻿using CabManagementSystem.Domain.Concrete;
 using CabManagementSystem.Domain.Entities;
+using CabManagementSystem.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,6 +10,7 @@ using System.Web.Mvc;
 
 namespace CabManagementSystem.WebUI.Controllers
 {
+    [CustomAuthenticationFilter]
     public class PasswordController : Controller
     {
         CabDbContext context = new CabDbContext();
@@ -21,6 +23,7 @@ namespace CabManagementSystem.WebUI.Controllers
             else { }
             return View();
         }
+
         [HttpPost]
         public ActionResult ChangePassword(string Password, string newPassword, string Confirmpwd)
         {

@@ -10,6 +10,7 @@ using CabManagementSystem.Domain.Abstract;
 
 namespace CabManagementSystem.WebUI.Controllers
 {
+    [CustomAuthenticationFilter]
     public class VehicleBillController : Controller
     {
         public CabDbContext context = new CabDbContext();
@@ -44,13 +45,14 @@ namespace CabManagementSystem.WebUI.Controllers
 
             return View(Details);
         }
+
         [HttpGet]
         public ViewResult Create()
         {
             return View();
         }
+
         [HttpPost]
-        //[AllowAnonymous]
         public ActionResult Create(VehicleBill vehicleBill)
         {
             if (ModelState.IsValid)
@@ -62,7 +64,7 @@ namespace CabManagementSystem.WebUI.Controllers
 
             return View(vehicleBill);
         }
-        //[AllowAnonymous]
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

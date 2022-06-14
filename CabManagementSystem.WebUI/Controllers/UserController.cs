@@ -7,6 +7,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace CabManagementSystem.WebUI.Controllers
 {
@@ -19,22 +20,25 @@ namespace CabManagementSystem.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(User user)
+        public ActionResult Index(User user, string ReturnUrl)
         {
             var userData = context.Users.Where(model => model.UserType == user.UserType &&
                                         model.UserName == user.UserName &&
                                         model.Password == user.Password).FirstOrDefault();
+            
             if (userData != null)
             {
                 Session["UserType"] = user.UserType;
                 Session["UserName"] = user.UserName.ToString();
                 TempData["LoginSuccessMessage"] = "<script>alert('Login Succesful!')</script>";
                 return RedirectToAction("UserDashboard", "Dashboard");
+
             }
             else
             {
+                FormsAuthentication.SetAuthCookie(user.UserName, false);
                 ViewBag.ErrorMessage = "<script>alert('Login Failed! Username/Password is incorrect')</script>";
-                return View();
+                return View(ReturnUrl);
             }
         }
 
